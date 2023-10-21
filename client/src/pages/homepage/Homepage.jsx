@@ -1,7 +1,7 @@
 import Nav from "../../components/navbar/Nav";
 import Heroslider from "../../components/heroslider/Heroslider";
 import { Link } from "react-router-dom";
-import { images } from "../../imgdata";
+import { images, heroSliderImages } from "../../imgdata";
 import Footer from "../../components/footer/Footer";
 import firstImg from "../../assets/firstImage.jpg";
 import secondImage from "../../assets/secondImage.jpg";
@@ -19,11 +19,15 @@ export default function Homepage() {
 			</div>
 		</div>
 	));
+	console.log(heroSliderImages);
 	return (
 		<>
 			<Nav />
 			<main>
-				<Heroslider />
+				<Heroslider
+					images={heroSliderImages}
+					title={heroSliderImages}
+				/>
 				<div className="ourProducts">
 					<div className="ourProducts__header">
 						<h2>Our products</h2>

@@ -30,3 +30,14 @@ export const images = [
 		src: "/src/assets/sofa.jpg",
 	},
 ];
+
+export const heroSliderImages = [
+	{
+		title: "Black Leather Sofa",
+		src: "/src/assets/pexels-photo-276583.jpeg",
+	},
+	{
+		title: "Cool Beds",
+		src: "https://cdn.pixabay.com/photo/2014/08/11/21/40/bedroom-416062_1280.jpg",
+	},
+];
