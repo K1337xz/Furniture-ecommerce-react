@@ -1,6 +1,8 @@
 @use "../../scss/abstract/colors" as *;
 
 .ourProducts {
+	position: relative;
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -90,6 +92,13 @@
 	width: 100%;
 	padding: 120px 112px;
 	gap: 32px;
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		gap: 65px;
+	}
 	&__card {
 		display: flex;
 		align-items: center;

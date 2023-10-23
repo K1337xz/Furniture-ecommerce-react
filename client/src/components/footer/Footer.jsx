@@ -7,7 +7,7 @@ export default function Footer() {
 		<footer className="footer">
 			<div className="footer__content">
 				<div className="footer__leftSide">
-					<Link to="x" className="footer__leftSide-logo">
+					<Link to="/" className="footer__leftSide-logo">
 						<img src={logo} alt="logo" />
 					</Link>
 				</div>
