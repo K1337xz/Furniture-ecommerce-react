@@ -172,7 +172,7 @@
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
-	padding-top: 120px;
+	padding-top: 20px;
 	&__header {
 		display: flex;
 		align-items: center;
@@ -185,6 +185,9 @@
 			font-style: normal;
 			font-weight: 300;
 		}
+	}
+	&__wrapper {
+		width: 100%;
 	}
 	&__projects {
 		display: FLEX;

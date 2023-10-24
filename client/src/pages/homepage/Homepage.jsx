@@ -153,17 +153,23 @@ export default function Homepage() {
 					</FramerDiv>
 				</div>
 				<div className="seeOurProjects">
-					<div className="seeOurProjects__header">
-						<h2>SEE OUR PROJECTS</h2>
-					</div>
-					<div className="seeOurProjects__projects">
-						<Link
-							to="X"
-							className="seeOurProjects__projects--button"
-						>
-							SEE OUR PROJECTS
-						</Link>
-					</div>
+					<FramerDiv
+						variantHidden={{ opacity: 0, y: 75 }}
+						variantVisible={{ opacity: 1, y: 0 }}
+						divClass="seeOurProjects__wrapper"
+					>
+						<div className="seeOurProjects__header">
+							<h2>SEE OUR PROJECTS</h2>
+						</div>
+						<div className="seeOurProjects__projects">
+							<Link
+								to="X"
+								className="seeOurProjects__projects--button"
+							>
+								SEE OUR PROJECTS
+							</Link>
+						</div>
+					</FramerDiv>
 				</div>
 			</main>
 			<Footer />
