@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/furniture-logos_white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./footer.scss";
 
 export default function Footer() {
@@ -40,9 +40,21 @@ export default function Footer() {
 				</div>
 				<div className="footer__location">
 					<div className="footer__locationValues">
-						<FontAwesomeIcon icon={faLocationDot} />{" "}
-						<Link to="#">loremipsum@loremipsum.com</Link>
+						<FontAwesomeIcon icon={faLocationDot} />
+						<Link to="#">LOREM LOREM LOREM</Link>
 					</div>
+					<div className="footer__locationValues">
+						<FontAwesomeIcon icon={faEnvelope} />
+						<Link to="#">lorem@lorem.com</Link>
+					</div>
+				</div>
+			</div>
+			<div className="footer__lowerContent">
+				<p>© 2023 All Rights Reserved</p>
+				<div className="footer__lowerLinks">
+					<Link>Privacy Policy </Link>
+					<Link>Terms of Use</Link>
+					<Link>Sales and Refunds</Link>
 				</div>
 			</div>
 		</footer>
