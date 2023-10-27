@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const slideVariants = {
 	enter: (direction) => {
 		return {
-			x: direction < 0 ? 1000 : -1332,
+			x: direction < 0 ? 1000 : -1000,
 			opacity: 0,
 		};
 	},
@@ -23,7 +23,7 @@ const slideVariants = {
 	exit: (direction) => {
 		return {
 			zIndex: 0,
-			x: direction < 0 ? 1000 : -1332,
+			x: direction < 0 ? 1000 : -1000,
 			opacity: 0,
 			display: "none",
 		};
@@ -78,10 +78,10 @@ export default function Heroslider({ images, title }) {
 				</Link>
 			</div>
 
-			<div className="heroSlider--nextSlide" onClick={() => paginate(1)}>
+			<div className="heroSlider--nextSlide" onClick={() => paginate(-1)}>
 				<FontAwesomeIcon icon={faChevronRight} />
 			</div>
-			<div className="heroSlider--prevSlide" onClick={() => paginate(-1)}>
+			<div className="heroSlider--prevSlide" onClick={() => paginate(1)}>
 				<FontAwesomeIcon icon={faChevronLeft} />
 			</div>
 		</div>
