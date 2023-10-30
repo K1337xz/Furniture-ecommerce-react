@@ -2,12 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logoblack from "../../assets/furniture-logos_transparent.png";
 import scrollNav from "../../hooks/scrollNav";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-	faCircleUser,
-	faMagnifyingGlass,
-	faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
+import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
+
 import "./nav.scss";
 
 export default function Nav() {
@@ -42,24 +38,12 @@ export default function Nav() {
 							<Link to="#">CONTACT US</Link>
 						</li>
 					</ul>
+
 					<div className="nav__middle">
 						<img src={logoblack} className="nav__logo" />
 					</div>
 
-					<div className="nav__right">
-						<FontAwesomeIcon
-							icon={faCircleUser}
-							className="nav__right--icons"
-						/>
-						<FontAwesomeIcon
-							icon={faMagnifyingGlass}
-							className="nav__right--icons"
-						/>
-						<FontAwesomeIcon
-							icon={faCartShopping}
-							className="nav__right--icons"
-						/>
-					</div>
+					<div className="nav__right"></div>
 				</nav>
 				<div className={showSubNav ? "subnav active" : "subnav hidden"}>
 					<ul className="subnav__items">
@@ -77,6 +61,7 @@ export default function Nav() {
 						</li>
 					</ul>
 				</div>
+				<div className="mobileNav"></div>
 			</header>
 		</>
 	);
