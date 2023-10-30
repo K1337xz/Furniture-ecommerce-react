@@ -1,4 +1,5 @@
 @use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
 
 .middleInfo {
 	display: flex;
@@ -80,6 +81,43 @@
 		overflow: hidden;
 		img {
 			width: 100%;
+		}
+	}
+}
+@include media("<=phone") {
+	.middleInfo {
+		padding: 10px 0px;
+		&__card {
+			gap: 10px;
+			flex-direction: column-reverse;
+			&--reverse {
+				flex-direction: column-reverse;
+				gap: 10px;
+			}
+		}
+		&__wrapper {
+			justify-content: space-between;
+			gap: 15px;
+		}
+		&__cardRight {
+			width: 90%;
+			height: 30vh;
+		}
+		&__cardLeft {
+			width: 90%;
+			height: 45vh;
+			&-content {
+				gap: 10px;
+				width: 350px;
+				align-items: center;
+				text-align: center;
+			}
+			h3 {
+				font-size: 1.5rem;
+			}
+			p {
+				font-size: 12px;
+			}
 		}
 	}
 }

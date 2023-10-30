@@ -30,6 +30,12 @@ header {
 	width: 85%;
 	height: 75%;
 	padding: 24px 0px;
+	&__desktop {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
 	&__left {
 		display: flex;
 		align-items: center;
@@ -113,9 +119,23 @@ header {
 			font-weight: 600;
 		}
 	}
+	.close {
+		right: 0;
+		font-size: 25px;
+		color: $color50;
+		background-color: blue;
+	}
 }
 @include media("<=phone") {
 	.nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		&__desktop {
+			display: none;
+		}
 		&__left {
 			display: none;
 		}
@@ -123,9 +143,35 @@ header {
 			display: none;
 		}
 		&__logo {
-			width: 70%;
+			width: 55%;
 		}
 	}
+
+	.subnav {
+		display: none;
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		&__desktop {
+			display: none;
+		}
+		&__left {
+			display: none;
+		}
+		&__right {
+			display: none;
+		}
+		&__logo {
+			width: 55%;
+		}
+	}
+
 	.subnav {
 		display: none;
 	}

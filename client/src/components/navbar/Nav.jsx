@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logoblack from "../../assets/furniture-logos_transparent.png";
 import scrollNav from "../../hooks/scrollNav";
-import { AccessAlarm, ThreeDRotation } from "@mui/icons-material";
+import MobileNav from "../mobileNav/MobileNav";
+import { FiMenu, FiSearch, FiUser, FiShoppingCart } from "react-icons/fi";
 
+import { AnimatePresence, motion } from "framer-motion";
 import "./nav.scss";
 
 export default function Nav() {
@@ -23,27 +25,33 @@ export default function Nav() {
 			setShowSubNav(false);
 		}
 	}, [scroll.y, scroll.lastY]);
+
 	return (
 		<>
 			<header className={showNav ? "active" : "hidden"}>
 				<nav className="nav">
-					<ul className="nav__left">
-						<li>
-							<Link to="#">ABOUT US</Link>
-						</li>
-						<li>
-							<Link to="#">MATERIALS</Link>
-						</li>
-						<li>
-							<Link to="#">CONTACT US</Link>
-						</li>
-					</ul>
-
-					<div className="nav__middle">
-						<img src={logoblack} className="nav__logo" />
+					<div className="nav__desktop">
+						<ul className="nav__left">
+							<li>
+								<Link to="#">ABOUT US</Link>
+							</li>
+							<li>
+								<Link to="#">MATERIALS</Link>
+							</li>
+							<li>
+								<Link to="#">CONTACT US</Link>
+							</li>
+						</ul>
+						<div className="nav__middle">
+							<img src={logoblack} className="nav__logo" />
+						</div>
+						<div className="nav__right">
+							<FiSearch className="nav__right--icons" />
+							<FiUser className="nav__right--icons" />
+							<FiShoppingCart className="nav__right--icons" />
+						</div>
 					</div>
-
-					<div className="nav__right"></div>
+					<MobileNav />
 				</nav>
 				<div className={showSubNav ? "subnav active" : "subnav hidden"}>
 					<ul className="subnav__items">
@@ -61,7 +69,6 @@ export default function Nav() {
 						</li>
 					</ul>
 				</div>
-				<div className="mobileNav"></div>
 			</header>
 		</>
 	);

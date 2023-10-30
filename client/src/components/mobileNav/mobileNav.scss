@@ -1,0 +1,226 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
+.mobileNav {
+	display: none;
+}
+@include media("<=phone") {
+	.mobileNav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 30px;
+		height: 100%;
+		width: 100%;
+		&__rightContent {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		&__middle {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40%;
+		}
+		&__slider {
+			display: flex;
+			position: absolute;
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			background-color: #0b1528bb;
+		}
+		&__sliderContent {
+			background-color: $color50;
+			width: 80%;
+			height: 100vh;
+		}
+		&__sliderTop {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			width: 100%;
+			height: 10vh;
+		}
+		&__sliderButton {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 60%;
+			height: 100%;
+			background-color: $color100;
+			border: 1px solid $color200;
+			text-decoration: none;
+			color: $color800;
+			&.active {
+				background-color: $color300;
+				color: $color950;
+				font-weight: 700;
+				border: 1px solid $color600;
+			}
+		}
+		&__leftContent {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-evenly;
+			flex-direction: column;
+			width: 100%;
+			height: 25%;
+			padding: 20px;
+			list-style: none;
+			li {
+				display: flex;
+				align-items: flex-start;
+				width: 100%;
+				height: 25%;
+				a {
+					text-decoration: none;
+					color: $color900;
+					font-weight: 600;
+				}
+			}
+		}
+		&__rightContent {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-evenly;
+			flex-direction: column;
+			width: 100%;
+			height: 25%;
+			padding: 20px;
+			list-style: none;
+			li {
+				display: flex;
+				align-items: flex-start;
+				width: 100%;
+				height: 25%;
+				a {
+					text-decoration: none;
+					color: $color900;
+					font-weight: 600;
+					text-transform: uppercase;
+				}
+			}
+		}
+		&__logo {
+			width: 55%;
+		}
+		&__icons {
+			cursor: pointer;
+			width: 25px;
+			height: 25px;
+			font-weight: 400;
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.mobileNav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 30px;
+		height: 100%;
+		width: 100%;
+		&__rightContent {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+		&__middle {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 60%;
+		}
+		&__slider {
+			display: flex;
+			position: absolute;
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			background-color: #0b1528bb;
+		}
+		&__sliderContent {
+			background-color: $color50;
+			width: 80%;
+			height: 100vh;
+		}
+		&__sliderTop {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			width: 100%;
+			height: 10vh;
+		}
+		&__sliderButton {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 60%;
+			height: 100%;
+			background-color: $color100;
+			border: 1px solid $color200;
+			text-decoration: none;
+			color: $color800;
+			&.active {
+				background-color: $color300;
+				color: $color950;
+				font-weight: 700;
+				border: 1px solid $color600;
+			}
+		}
+		&__leftContent {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-evenly;
+			flex-direction: column;
+			width: 100%;
+			height: 25%;
+			padding: 20px;
+			list-style: none;
+			li {
+				display: flex;
+				align-items: flex-start;
+				width: 100%;
+				height: 25%;
+				a {
+					text-decoration: none;
+					color: $color900;
+					font-weight: 600;
+				}
+			}
+		}
+		&__rightContent {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-evenly;
+			flex-direction: column;
+			width: 100%;
+			height: 25%;
+			padding: 20px;
+			list-style: none;
+			li {
+				display: flex;
+				align-items: flex-start;
+				width: 100%;
+				height: 25%;
+				a {
+					text-decoration: none;
+					color: $color900;
+					font-weight: 600;
+					text-transform: uppercase;
+				}
+			}
+		}
+		&__logo {
+			width: 25%;
+		}
+		&__icons {
+			cursor: pointer;
+			width: 25px;
+			height: 25px;
+			font-weight: 400;
+		}
+	}
+}

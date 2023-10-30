@@ -1,4 +1,5 @@
 @use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
 
 .heroSlider {
 	scroll-behavior: smooth;
@@ -74,5 +75,39 @@
 		top: 40%;
 		color: $color950;
 		cursor: pointer;
+	}
+}
+@include media("<=phone") {
+	.heroSlider {
+		height: 40vh;
+		&--nextSlide {
+			font-size: 25px;
+			color: $color50;
+		}
+		&--prevSlide {
+			font-size: 25px;
+			color: $color50;
+		}
+		&__content {
+			justify-content: center;
+			width: 80%;
+			height: 100%;
+			padding: 20px 40px;
+			p {
+				font-size: 18px;
+			}
+			h1 {
+				font-size: 35px;
+				width: 100%;
+			}
+			&--checkBtn {
+				width: 115px;
+				height: 35px;
+			}
+		}
+		img {
+			width: 100%;
+			height: 40vh;
+		}
 	}
 }
