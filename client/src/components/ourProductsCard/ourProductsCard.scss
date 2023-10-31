@@ -111,3 +111,29 @@
 		}
 	}
 }
+@include media(">=phone", "<=tablet") {
+	.ourProducts {
+		padding-top: 10px;
+		&__header {
+			height: 90px;
+			padding: 7px 25px;
+			h2 {
+				font-size: 1.25rem;
+			}
+		}
+		&__products {
+			width: 100%;
+			padding: 10px 8px;
+		}
+		&__productWrapper {
+			justify-content: center;
+			grid-template-columns: repeat(2, 46%);
+			grid-template-rows: repeat(2, 1fr);
+		}
+		&__productCard {
+			&-description {
+				font-size: 16px;
+			}
+		}
+	}
+}
