@@ -177,6 +177,51 @@ header {
 	}
 }
 
+@include media(">=tablet", "<=1023px") {
+	.nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		&__desktop {
+			display: none;
+		}
+		&__left {
+			display: none;
+		}
+		&__right {
+			display: none;
+		}
+		&__logo {
+			width: 55%;
+		}
+	}
+
+	.subnav {
+		display: none;
+	}
+}
+
+@include media(">=1023px", "<=desktop") {
+	.nav {
+		&__middle {
+			width: 35%;
+		}
+		&__left {
+			gap: 22px;
+			width: 45%;
+			font-size: 0.875rem;
+			li {
+				width: 75%;
+			}
+		}
+		&__logo {
+			width: 30%;
+		}
+	}
+}
+
 @keyframes hideSubnav {
 	0% {
 		transform: translateY(-10%);

@@ -37,7 +37,7 @@
 		justify-content: center;
 		flex-direction: column;
 		gap: 16px;
-		width: 30%;
+		width: 55%;
 		height: 292px;
 		&-content {
 			display: flex;
@@ -104,11 +104,12 @@
 			height: 30vh;
 		}
 		&__cardLeft {
+			align-items: center;
 			width: 90%;
 			height: 45vh;
 			&-content {
 				gap: 10px;
-				width: 350px;
+				width: 320px;
 				align-items: center;
 				text-align: center;
 			}
@@ -122,4 +123,114 @@
 	}
 }
 @include media(">=phone", "<=tablet") {
+	.middleInfo {
+		padding: 60px 0px;
+		&__card {
+			gap: 10px;
+			flex-direction: column-reverse;
+			&--reverse {
+				flex-direction: column-reverse;
+				gap: 10px;
+			}
+		}
+		&__wrapper {
+			justify-content: space-between;
+			gap: 15px;
+		}
+		&__cardRight {
+			width: 55%;
+			height: 40vh;
+		}
+		&__cardLeft {
+			width: 100%;
+			height: 45vh;
+			align-items: center;
+			&-content {
+				gap: 10px;
+				width: 480px;
+				align-items: center;
+				text-align: center;
+			}
+			h3 {
+				font-size: 1.9rem;
+			}
+			p {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+@include media(">=tablet", "<=1024px") {
+	.middleInfo {
+		padding: 60px 0px;
+		&__card {
+			gap: 10px;
+			flex-direction: column-reverse;
+			&--reverse {
+				flex-direction: column-reverse;
+				gap: 10px;
+			}
+		}
+		&__wrapper {
+			justify-content: space-between;
+			gap: 15px;
+		}
+		&__cardRight {
+			width: 55%;
+			height: 40vh;
+		}
+		&__cardLeft {
+			width: 100%;
+			height: 45vh;
+			align-items: center;
+			&-content {
+				gap: 10px;
+				width: 480px;
+				align-items: center;
+				text-align: center;
+			}
+			h3 {
+				font-size: 1.9rem;
+			}
+			p {
+				font-size: 1rem;
+			}
+		}
+	}
+}
+@include media(">=1023px", "<=desktop") {
+	.middleInfo {
+		padding: 120px 112px;
+		&__card {
+			gap: 45px;
+			flex-direction: row;
+			&--reverse {
+				flex-direction: row-reverse;
+				gap: 45px;
+			}
+		}
+		&__wrapper {
+			justify-content: space-between;
+			gap: 15px;
+		}
+		&__cardRight {
+			width: 70%;
+			height: 55vh;
+		}
+		&__cardLeft {
+			width: 100%;
+			height: 45vh;
+			&-content {
+				gap: 10px;
+				width: 480px;
+				align-items: flex-start;
+			}
+			h3 {
+				font-size: 1.9rem;
+			}
+			p {
+				font-size: 1rem;
+			}
+		}
+	}
 }

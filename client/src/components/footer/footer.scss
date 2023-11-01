@@ -22,14 +22,15 @@
 	}
 	&__leftSide {
 		display: flex;
-		width: 50%;
+		width: 40%;
 		&-logo {
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			width: 55%;
 			img {
-				width: 35%;
+				width: 80%;
+				max-width: 450px;
 			}
 		}
 	}
@@ -120,6 +121,8 @@
 			flex-direction: column;
 		}
 		&__items {
+			align-items: center;
+			text-align: center;
 			a {
 				font-size: 0.7rem;
 			}
@@ -128,6 +131,7 @@
 			width: 100%;
 		}
 		&__navContent {
+			align-items: center;
 			width: 90%;
 		}
 		&__leftSide {
@@ -135,7 +139,117 @@
 			align-items: center;
 			justify-content: center;
 			&-logo {
-				width: 100%;
+				width: 35%;
+			}
+		}
+		&__rightSide {
+			width: 85%;
+		}
+		&__location {
+			flex-direction: row;
+			gap: 1rem;
+			width: 77%;
+			margin-top: 3rem;
+		}
+		&__locationValues {
+			font-size: 0.8rem;
+		}
+		&__lowerContent {
+			justify-content: space-around;
+			width: 100%;
+			p {
+				font-size: 0.4rem;
+			}
+		}
+		&__lowerLinks {
+			font-size: 0.5rem;
+			gap: 0.8rem;
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.footer {
+		height: 80vh;
+		padding: 10px 0px 10px 0px;
+
+		&__content {
+			flex-direction: column;
+		}
+		&__items {
+			align-items: center;
+			a {
+				font-size: 0.7rem;
+			}
+		}
+		&__nav {
+			width: 100%;
+		}
+		&__navContent {
+			align-items: center;
+			width: 90%;
+		}
+		&__leftSide {
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			&-logo {
+				width: 30%;
+			}
+		}
+		&__rightSide {
+			width: 85%;
+		}
+		&__location {
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: row;
+			gap: 1rem;
+			width: 77%;
+			margin-top: 3rem;
+		}
+		&__locationValues {
+			font-size: 0.8rem;
+		}
+		&__lowerContent {
+			justify-content: space-around;
+			width: 100%;
+			p {
+				font-size: 0.5rem;
+			}
+		}
+		&__lowerLinks {
+			font-size: 0.5rem;
+			gap: 0.8rem;
+		}
+	}
+}
+@include media(">=tablet", "<=1024px") {
+	.footer {
+		height: 80vh;
+		padding: 10px 0px 10px 0px;
+
+		&__content {
+			flex-direction: column;
+		}
+		&__items {
+			align-items: center;
+			a {
+				font-size: 0.7rem;
+			}
+		}
+		&__nav {
+			width: 100%;
+		}
+		&__navContent {
+			align-items: center;
+			width: 90%;
+		}
+		&__leftSide {
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			&-logo {
+				width: 20%;
 			}
 		}
 		&__rightSide {

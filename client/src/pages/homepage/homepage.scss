@@ -80,3 +80,75 @@
 		}
 	}
 }
+@include media(">=phone", "<=tablet") {
+	.seeOurProjects {
+		padding-top: 10px;
+		&__header {
+			height: 90px;
+			padding: 7px 25px;
+			h2 {
+				font-size: 1.25rem;
+			}
+		}
+		&__projects {
+			height: 35vh;
+			&--button {
+				width: 150px;
+				height: 40px;
+				border-radius: 5px;
+				padding: 8px 0px;
+				background-color: $color400;
+				font-size: 0.8rem;
+				color: $color50;
+				text-decoration: none;
+				transition: all 0.5s ease;
+				&:hover {
+					transition: all 0.5s ease;
+					width: 160px;
+					height: 55px;
+					background-color: #0b1528;
+					border: 2px solid $color950;
+					color: $color50;
+					font-weight: 700;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+@include media(">=tablet", "<=1024px") {
+	.seeOurProjects {
+		padding-top: 10px;
+		&__header {
+			height: 90px;
+			padding: 7px 25px;
+			h2 {
+				font-size: 1.25rem;
+			}
+		}
+		&__projects {
+			height: 35vh;
+			&--button {
+				width: 150px;
+				height: 40px;
+				border-radius: 5px;
+				padding: 8px 0px;
+				background-color: $color400;
+				font-size: 0.8rem;
+				color: $color50;
+				text-decoration: none;
+				transition: all 0.5s ease;
+				&:hover {
+					transition: all 0.5s ease;
+					width: 160px;
+					height: 55px;
+					background-color: #0b1528;
+					border: 2px solid $color950;
+					color: $color50;
+					font-weight: 700;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
