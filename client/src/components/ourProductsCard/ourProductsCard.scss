@@ -30,7 +30,7 @@
 	}
 	&__productWrapper {
 		display: grid;
-		justify-content: start;
+		justify-content: center;
 		grid-template-columns: repeat(3, 30%);
 		grid-template-rows: repeat(2, 1fr);
 		gap: 20px;

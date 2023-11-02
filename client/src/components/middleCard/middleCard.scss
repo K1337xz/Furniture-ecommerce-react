@@ -7,7 +7,7 @@
 	justify-content: center;
 	flex-direction: column;
 	width: 100%;
-	padding: 120px 112px;
+	padding: 120px 40px;
 	gap: 32px;
 	&__wrapper {
 		display: flex;
@@ -21,13 +21,13 @@
 		align-items: center;
 		justify-content: space-around;
 		width: 100%;
-		gap: 65px;
+		gap: 25px;
 		&--reverse {
 			display: flex;
 			align-items: center;
 			justify-content: space-around;
 			width: 100%;
-			gap: 65px;
+			gap: 25px;
 			flex-direction: row-reverse;
 		}
 	}
@@ -37,7 +37,7 @@
 		justify-content: center;
 		flex-direction: column;
 		gap: 16px;
-		width: 55%;
+		width: 40%;
 		height: 292px;
 		&-content {
 			display: flex;
@@ -63,6 +63,7 @@
 			font-style: normal;
 			font-weight: 600;
 			line-height: 150%;
+			color: $color800;
 		}
 		p {
 			font-size: 18px;
