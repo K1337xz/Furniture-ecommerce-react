@@ -33,7 +33,7 @@ export default function Nav() {
 					<div className="nav__desktop">
 						<ul className="nav__left">
 							<li>
-								<Link to="#">ABOUT US</Link>
+								<Link to="/about">ABOUT US</Link>
 							</li>
 							<li>
 								<Link to="#">MATERIALS</Link>
