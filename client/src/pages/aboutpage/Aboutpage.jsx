@@ -11,8 +11,25 @@ export default function Aboutpage() {
 					<div className="about__topHero">
 						<h1>About Us</h1>
 					</div>
+					<div className="about__content">
+						<div className="about__contentTop">
+							<h2>Furniture</h2>
+						</div>
+						<div className="about__contentBottom">
+							<p>
+								At XYZ Furniture Company, we craft timeless and
+								elegant pieces of furniture that transform your
+								space into a masterpiece of comfort and style.
+								With a commitment to quality, innovation, and
+								exceptional craftsmanship, we've been a trusted
+								name in the furniture industry for over three
+								decades.
+							</p>
+						</div>
+					</div>
 				</div>
 			</main>
+			<Footer />
 		</>
 	);
 }

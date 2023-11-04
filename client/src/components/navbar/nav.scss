@@ -1,24 +1,25 @@
 @use "../../scss/abstract/colors" as *;
 @use "../../scss/base/brakepoints" as *;
+
 header {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	width: 100%;
-	height: 12vh;
+	height: 14vh;
 	background-color: $color50;
 	z-index: 3;
 	&.active {
 		position: sticky;
 		top: 0;
-		height: 12vh;
+		height: 14vh;
 		transition: transform 150ms ease-in-out;
 	}
 	&.hidden {
 		position: sticky;
 		top: 0;
-		height: 12vh;
+		height: 14vh;
 		transition: transform 150ms ease-in-out;
 		transform: translateY(-100%);
 	}
@@ -56,6 +57,11 @@ header {
 		align-items: center;
 		justify-content: center;
 		width: 50%;
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 	&__logo {
 		width: 13%;

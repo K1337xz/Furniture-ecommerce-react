@@ -5,6 +5,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	width: 100%;
 	height: 100%;
 	&__topHero {
@@ -27,6 +28,46 @@
 			line-height: 150%;
 			letter-spacing: -0.48px;
 			color: $color800;
+		}
+	}
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 33px;
+		padding: 44px 125px;
+		width: 100%;
+	}
+	&__contentTop {
+		h2 {
+			font-size: 48px;
+			font-style: normal;
+			font-weight: 300;
+			line-height: 150%;
+			letter-spacing: -0.48px;
+		}
+	}
+	&__contentBottom {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: 20px;
+		h3 {
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 300;
+			line-height: 150%;
+			letter-spacing: -0.24px;
+		}
+		p {
+			font-size: 24px;
+			font-style: normal;
+			font-weight: 300;
+			line-height: 150%;
+			letter-spacing: -0.24px;
+			width: 60%;
 		}
 	}
 }

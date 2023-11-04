@@ -43,7 +43,9 @@ export default function Nav() {
 							</li>
 						</ul>
 						<div className="nav__middle">
-							<img src={logoblack} className="nav__logo" />
+							<Link to="/">
+								<img src={logoblack} className="nav__logo" />
+							</Link>
 						</div>
 						<div className="nav__right">
 							<FiSearch className="nav__right--icons" />
