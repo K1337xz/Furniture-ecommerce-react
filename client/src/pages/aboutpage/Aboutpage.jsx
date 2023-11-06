@@ -1,5 +1,6 @@
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
+import MasonryGallery from "../../components/masonryGallery/MasonryGallery";
 import "./aboutpage.scss";
 
 export default function Aboutpage() {
@@ -17,7 +18,7 @@ export default function Aboutpage() {
 						</div>
 						<div className="about__contentBottom">
 							<p>
-								At XYZ Furniture Company, we craft timeless and
+								At Furniture Company, we craft timeless and
 								elegant pieces of furniture that transform your
 								space into a masterpiece of comfort and style.
 								With a commitment to quality, innovation, and
@@ -26,6 +27,12 @@ export default function Aboutpage() {
 								decades.
 							</p>
 						</div>
+					</div>
+					<div className="about__gallery">
+						<div className="about__galleryTop">
+							<h2>OUR FURNITURE AT YOU</h2>
+						</div>
+						<MasonryGallery />
 					</div>
 				</div>
 			</main>
