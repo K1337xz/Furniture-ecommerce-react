@@ -68,7 +68,7 @@ export default function MobileNav() {
 							{!showCategories && (
 								<ul className="mobileNav__leftContent">
 									<li>
-										<Link to="#">ABOUT US</Link>
+										<Link to="/about">ABOUT US</Link>
 									</li>
 									<li>
 										<Link to="#">MATERIALS</Link>

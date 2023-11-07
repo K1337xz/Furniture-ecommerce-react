@@ -1,0 +1,54 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
+.masonry {
+	position: relative;
+	&__fade {
+		position: absolute;
+		top: 28%;
+		width: 100%;
+		height: 65%;
+		background: linear-gradient(
+			0deg,
+			#809ed9 30%,
+			rgba(45, 83, 159, 0) 100%
+		);
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 10vh;
+		width: 100%;
+	}
+}
+@include media("<=phone") {
+	.masonry {
+		position: relative;
+		&__fade {
+			top: 25%;
+			width: 100%;
+			height: 72%;
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.masonry {
+		position: relative;
+		&__fade {
+			top: 32%;
+			width: 100%;
+			height: 66%;
+		}
+	}
+}
+@include media(">=tablet", "<=1023px") {
+	.masonry {
+		position: relative;
+		&__fade {
+			top: 28%;
+			width: 100%;
+			height: 67%;
+		}
+	}
+}
