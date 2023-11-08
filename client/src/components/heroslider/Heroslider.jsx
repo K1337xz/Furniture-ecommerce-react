@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, wrap } from "framer-motion";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { wrap } from "framer-motion";
+
 import {
 	faChevronLeft,
 	faChevronRight,

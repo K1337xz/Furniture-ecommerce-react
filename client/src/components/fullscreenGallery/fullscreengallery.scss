@@ -1,0 +1,26 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
+.fullscreenGallery {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	background-color: violet;
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+	&__closeBtn {
+		cursor: pointer;
+	}
+	&__image {
+		width: auto;
+		height: 95%;
+	}
+}

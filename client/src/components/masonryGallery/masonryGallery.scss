@@ -21,6 +21,9 @@
 		height: 10vh;
 		width: 100%;
 	}
+	&__photo {
+		cursor: pointer;
+	}
 }
 @include media("<=phone") {
 	.masonry {
