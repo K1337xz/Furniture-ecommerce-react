@@ -24,7 +24,9 @@ export default function MobileNav() {
 					/>
 				</div>
 				<div className="mobileNav__middle">
-					<img src={logoblack} className="mobileNav__logo" />
+					<Link to="/">
+						<img src={logoblack} className="mobileNav__logo" />
+					</Link>
 				</div>
 				<div className="mobileNav__right">
 					<FiUser className="mobileNav__icons" />
@@ -71,10 +73,10 @@ export default function MobileNav() {
 										<Link to="/about">ABOUT US</Link>
 									</li>
 									<li>
-										<Link to="#">MATERIALS</Link>
+										<Link to="/materials">MATERIALS</Link>
 									</li>
 									<li>
-										<Link to="#">CONTACT US</Link>
+										<Link to="/contact">CONTACT US</Link>
 									</li>
 								</ul>
 							)}

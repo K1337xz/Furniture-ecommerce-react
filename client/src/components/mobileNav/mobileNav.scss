@@ -22,6 +22,11 @@
 			align-items: center;
 			justify-content: center;
 			width: 40%;
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 		}
 		&__slider {
 			display: flex;

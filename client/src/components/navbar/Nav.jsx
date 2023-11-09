@@ -36,7 +36,7 @@ export default function Nav() {
 								<Link to="/about">ABOUT US</Link>
 							</li>
 							<li>
-								<Link to="#">MATERIALS</Link>
+								<Link to="/materials">MATERIALS</Link>
 							</li>
 							<li>
 								<Link to="#">CONTACT US</Link>

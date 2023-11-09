@@ -85,10 +85,16 @@ export default function FullscreenGallery({
 						}}
 					/>
 				</AnimatePresence>
-				<div className="heroSlider--nextSlide" onClick={nextImage}>
+				<div
+					className="fullscreenGallery--nextSlide"
+					onClick={nextImage}
+				>
 					<FontAwesomeIcon icon={faChevronRight} />
 				</div>
-				<div className="heroSlider--prevSlide" onClick={prevImage}>
+				<div
+					className="fullscreenGallery--prevSlide"
+					onClick={prevImage}
+				>
 					<FontAwesomeIcon icon={faChevronLeft} />
 				</div>
 			</div>

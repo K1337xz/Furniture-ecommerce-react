@@ -23,4 +23,59 @@
 		width: auto;
 		height: 95%;
 	}
+	&--nextSlide {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		right: 5%;
+		top: 45%;
+		font-size: 1.5rem;
+		background-color: rgba(255, 255, 255, 0.212);
+		color: $color950;
+
+		cursor: pointer;
+	}
+	&--prevSlide {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		background-color: rgba(255, 255, 255, 0.212);
+		font-size: 1.5rem;
+		left: 5%;
+		top: 45%;
+		color: $color950;
+		cursor: pointer;
+	}
+}
+@include media("<=phone") {
+	.fullscreenGallery {
+		&__image {
+			height: auto;
+			width: 95%;
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.fullscreenGallery {
+		&__image {
+			height: auto;
+			max-height: 90%;
+			width: 95%;
+		}
+	}
+}
+@include media(">=tablet", "<=1023px") {
+	.fullscreenGallery {
+		&__image {
+			height: auto;
+			max-height: 90%;
+			width: 95%;
+		}
+	}
 }
