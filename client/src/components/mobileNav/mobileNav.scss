@@ -137,6 +137,11 @@
 			align-items: center;
 			justify-content: center;
 			width: 60%;
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 		}
 		&__slider {
 			display: flex;
@@ -247,6 +252,11 @@
 			align-items: center;
 			justify-content: center;
 			width: 60%;
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 		}
 		&__slider {
 			display: flex;
