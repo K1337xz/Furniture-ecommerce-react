@@ -23,7 +23,6 @@
 		background-size: 100%;
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
-
 		h1 {
 			font-size: 48px;
 			font-style: normal;
@@ -31,6 +30,108 @@
 			line-height: 150%;
 			letter-spacing: -0.48px;
 			color: $color800;
+		}
+	}
+	&__middleContent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+	&__subNav {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		width: 100%;
+		height: 10vh;
+		list-style: none;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 45%;
+		width: 5%;
+		&:hover {
+			border-bottom: 3px solid #6086d26e;
+			a {
+				font-weight: 700;
+			}
+		}
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $color950;
+			text-decoration: none;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+		}
+		&--active {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 45%;
+			width: 5%;
+			border-bottom: 3px solid $color400;
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: $color950;
+				text-decoration: none;
+				font-weight: 700;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+@include media("<=phone") {
+	.materials {
+		height: 37vh;
+		&__item {
+			width: 25%;
+			a {
+				font-size: 0.8rem;
+			}
+			&--active {
+				width: 25%;
+			}
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.materials {
+		height: 40vh;
+		&__item {
+			width: 25%;
+			&--active {
+				width: 25%;
+			}
+		}
+	}
+}
+@include media(">=tablet", "<=1024px") {
+	.materials {
+		height: 40vh;
+		&__item {
+			width: 25%;
+			&--active {
+				width: 25%;
+			}
+		}
+	}
+}
+@include media(">=1023px", "<=desktop") {
+	.materials {
+		height: 40vh;
+		&__item {
+			width: 25%;
+			&--active {
+				width: 25%;
+			}
 		}
 	}
 }

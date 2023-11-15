@@ -2,11 +2,12 @@ import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import materialsData from "../../materialsData";
 import MaterialsCard from "../../components/materialsCard/MaterialsCard";
-import "./materialspage.scss";
+import { Link } from "react-router-dom";
 import { useState } from "react";
+import "./materialspage.scss";
 
 export default function Materialspage() {
-	const [activeDrop, setActiveDrop] = useState("");
+	const [activeDrop, setActiveDrop] = useState("Oak");
 	const materials = materialsData.map((item) => {
 		if (activeDrop === item.material) {
 			return (
@@ -19,7 +20,11 @@ export default function Materialspage() {
 			);
 		}
 	});
-	console.log(materials.title);
+
+	const toggleChange = (e) => {
+		setActiveDrop(e.target.id);
+	};
+
 	return (
 		<>
 			<Nav />
@@ -29,21 +34,23 @@ export default function Materialspage() {
 						<h1>Materials</h1>
 					</div>
 					<div className="materials__middleContent">
-						<ul className="materils__subNav">
-							<p
-								onClick={() => {
-									setActiveDrop("Pine");
-								}}
-							>
-								PINE
-							</p>
-							<p
-								onClick={() => {
-									setActiveDrop("Oak");
-								}}
-							>
-								OAK
-							</p>
+						<ul className="materials__subNav">
+							{materialsData.map((item) => {
+								return (
+									<li
+										onClick={toggleChange}
+										className={
+											activeDrop === item.material
+												? "materials__item--active"
+												: "materials__item"
+										}
+									>
+										<Link id={item.material}>
+											{item.material}
+										</Link>
+									</li>
+								);
+							})}
 						</ul>
 					</div>
 				</div>
