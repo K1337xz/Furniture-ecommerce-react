@@ -13,13 +13,14 @@ header {
 	&.active {
 		position: sticky;
 		top: 0;
-		height: 14vh;
+		height: 12vh;
 		transition: transform 150ms ease-in-out;
 	}
 	&.hidden {
 		position: sticky;
+
 		top: 0;
-		height: 14vh;
+		height: 12vh;
 		transition: transform 150ms ease-in-out;
 		transform: translateY(-100%);
 	}
@@ -44,7 +45,7 @@ header {
 		text-decoration: none;
 		gap: 46px;
 		list-style: none;
-		font-size: 16px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 400;
 		a {

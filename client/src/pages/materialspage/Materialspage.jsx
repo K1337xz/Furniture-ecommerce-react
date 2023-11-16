@@ -38,14 +38,16 @@ export default function Materialspage() {
 							{materialsData.map((item) => {
 								return (
 									<li
-										onClick={toggleChange}
 										className={
 											activeDrop === item.material
 												? "materials__item--active"
 												: "materials__item"
 										}
 									>
-										<Link id={item.material}>
+										<Link
+											id={item.material}
+											onClick={toggleChange}
+										>
 											{item.material}
 										</Link>
 									</li>
