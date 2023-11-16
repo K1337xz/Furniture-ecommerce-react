@@ -1,4 +1,5 @@
 import Nav from "../../components/navbar/Nav";
+import ContactForm from "../../components/contactForm/ContactForm";
 import "./contactpage.scss";
 
 export default function Contactpage() {
@@ -9,6 +10,9 @@ export default function Contactpage() {
 				<div className="contact">
 					<div className="contact__topHero">
 						<h1>Contact Us</h1>
+					</div>
+					<div className="contact__content">
+						<ContactForm />
 					</div>
 				</div>
 			</main>

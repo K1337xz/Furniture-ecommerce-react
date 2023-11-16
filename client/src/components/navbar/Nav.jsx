@@ -39,7 +39,7 @@ export default function Nav() {
 								<Link to="/materials">MATERIALS</Link>
 							</li>
 							<li>
-								<Link to="#">CONTACT US</Link>
+								<Link to="/contact">CONTACT US</Link>
 							</li>
 						</ul>
 						<div className="nav__middle">
