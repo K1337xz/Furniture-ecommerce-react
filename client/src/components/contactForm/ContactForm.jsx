@@ -9,6 +9,8 @@ const schema = yup.object({
 		.string()
 		.email("Email format is valid!")
 		.required("Email is required!"),
+	topic: yup.string().required("Topic is required"),
+	message: yup.string().required("Message is required"),
 });
 
 export default function ContactForm() {
@@ -41,7 +43,7 @@ export default function ContactForm() {
 			</div>
 			<div className="contactForm__message">
 				<label>Message</label>
-				<textarea {...register("Message")} />
+				<textarea {...register("message")} />
 			</div>
 			<input type="submit" />
 		</form>
