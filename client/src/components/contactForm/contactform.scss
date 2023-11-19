@@ -1,0 +1,7 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
+.contactForm {
+	display: flex;
+	flex-direction: column;
+}

@@ -29,19 +29,25 @@ export default function ContactForm() {
 
 	return (
 		<form className="contactForm" onSubmit={handleSubmit(toggleSend)}>
-			<div className="contactForm__firstName">
-				<label>First and Last name</label>
-				<input {...register("names")} />
+			<div className="contactForm__inputWrapp">
+				<label>
+					First and Last name
+					<input {...register("names")} />
+				</label>
 			</div>
-			<div className="contactForm__email">
-				<label>Email</label>
-				<input {...register("email")} />
+			<div className="contactForm__inputWrapp">
+				<label>
+					email
+					<input {...register("email")} />
+				</label>
 			</div>
-			<div className="contactForm__topic">
-				<label>Topic</label>
-				<input {...register("topic")} />
+			<div className="contactForm__inputWrapp">
+				<label>
+					topic
+					<input {...register("topic")} />
+				</label>
 			</div>
-			<div className="contactForm__message">
+			<div className="contactForm__inputWrapp">
 				<label>Message</label>
 				<textarea {...register("message")} />
 			</div>
