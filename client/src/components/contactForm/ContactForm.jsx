@@ -33,25 +33,53 @@ export default function ContactForm() {
 				<label>
 					First and Last name
 					<input {...register("names")} />
+					{errors.names && (
+						<span className="contactForm__error">
+							{errors.names.message}
+						</span>
+					)}
 				</label>
 			</div>
 			<div className="contactForm__inputWrapp">
 				<label>
-					email
+					Email
 					<input {...register("email")} />
+					{errors.email && (
+						<span className="contactForm__error">
+							{errors.email.message}
+						</span>
+					)}
 				</label>
 			</div>
 			<div className="contactForm__inputWrapp">
 				<label>
-					topic
+					Topic
 					<input {...register("topic")} />
+					{errors.topic && (
+						<span className="contactForm__error">
+							{errors.topic.message}
+						</span>
+					)}
 				</label>
 			</div>
-			<div className="contactForm__inputWrapp">
-				<label>Message</label>
-				<textarea {...register("message")} />
+			<div className="contactForm__inputTextArea">
+				<label>
+					Message
+					<textarea {...register("message")} />
+					{errors.message && (
+						<span className="contactForm__error">
+							{errors.message.message}
+						</span>
+					)}
+				</label>
 			</div>
-			<input type="submit" />
+			<div className="contactForm__sendWrapper">
+				<input
+					type="submit"
+					value="Send"
+					className="contactForm__sendBtn"
+				/>
+			</div>
 		</form>
 	);
 }

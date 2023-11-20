@@ -1,5 +1,6 @@
 import Nav from "../../components/navbar/Nav";
 import ContactForm from "../../components/contactForm/ContactForm";
+import Footer from "../../components/footer/Footer";
 import "./contactpage.scss";
 
 export default function Contactpage() {
@@ -16,6 +17,7 @@ export default function Contactpage() {
 					</div>
 				</div>
 			</main>
+			<Footer />
 		</>
 	);
 }
