@@ -32,7 +32,10 @@ export default function ContactForm() {
 			<div className="contactForm__inputWrapp">
 				<label>
 					First and Last name
-					<input {...register("names")} />
+					<input
+						{...register("names")}
+						className={errors.names ? "contactForm__errorInp" : ""}
+					/>
 					{errors.names && (
 						<span className="contactForm__error">
 							{errors.names.message}
@@ -43,7 +46,10 @@ export default function ContactForm() {
 			<div className="contactForm__inputWrapp">
 				<label>
 					Email
-					<input {...register("email")} />
+					<input
+						{...register("email")}
+						className={errors.email ? "contactForm__errorInp" : ""}
+					/>
 					{errors.email && (
 						<span className="contactForm__error">
 							{errors.email.message}
@@ -54,7 +60,10 @@ export default function ContactForm() {
 			<div className="contactForm__inputWrapp">
 				<label>
 					Topic
-					<input {...register("topic")} />
+					<input
+						{...register("topic")}
+						className={errors.topic ? "contactForm__errorInp" : ""}
+					/>
 					{errors.topic && (
 						<span className="contactForm__error">
 							{errors.topic.message}
@@ -65,7 +74,12 @@ export default function ContactForm() {
 			<div className="contactForm__inputTextArea">
 				<label>
 					Message
-					<textarea {...register("message")} />
+					<textarea
+						{...register("message")}
+						className={
+							errors.message ? "contactForm__errorInp" : ""
+						}
+					/>
 					{errors.message && (
 						<span className="contactForm__error">
 							{errors.message.message}

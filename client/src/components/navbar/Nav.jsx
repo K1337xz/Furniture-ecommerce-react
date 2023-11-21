@@ -14,7 +14,7 @@ export default function Nav() {
 	const scroll = scrollNav();
 
 	useEffect(() => {
-		if (scroll.y > 0 && scroll.y - scroll.lastY > 0) {
+		if (scroll.y > 100 && scroll.y - scroll.lastY > 0) {
 			setShowNav(false);
 		} else {
 			setShowNav(true);
