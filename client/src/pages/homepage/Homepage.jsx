@@ -30,8 +30,11 @@ export default function Homepage() {
 						</div>
 						<div className="seeOurProjects__projects">
 							<Link
-								to="X"
+								to="/about#projects"
 								className="seeOurProjects__projects--button"
+								onClick={() => {
+									window.scroll(0, 0);
+								}}
 							>
 								SEE OUR PROJECTS
 							</Link>

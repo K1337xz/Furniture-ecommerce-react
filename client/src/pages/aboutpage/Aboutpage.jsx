@@ -13,7 +13,7 @@ export default function Aboutpage() {
 						<h1>About Us</h1>
 					</div>
 					<div className="about__content">
-						<div className="about__contentTop">
+						<div className="about__contentTop" id="projects">
 							<h2>Furniture</h2>
 						</div>
 						<div className="about__contentBottom">
