@@ -1,6 +1,7 @@
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import { useState } from "react";
+import "./productspage.scss";
 export default function Productspage() {
 	const [filterPrice, setFilterPrice] = useState(1000);
 	return (
@@ -26,28 +27,29 @@ export default function Productspage() {
 						</div>
 						<div className="products__filterItem">
 							<h2>Sort by</h2>
-							<div className="products__inputs">
+							<div className="products__filterInputs">
 								<label htmlFor="asc">
+									Price (Lowest to highest )
 									<input
 										type="radio"
 										id="asc"
 										value="asc"
 										name="price"
 									/>
-									Price lowest first
 								</label>
 								<label htmlFor="desc">
+									Price (Highest to lowest)
 									<input
 										type="radio"
 										id="desc"
 										value="desc"
 										name="price"
 									/>
-									Price highest first
 								</label>
 							</div>
 						</div>
 					</div>
+					<div className="products__productsCards"></div>
 				</div>
 			</main>
 		</>
