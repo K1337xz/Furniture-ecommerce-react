@@ -58,16 +58,16 @@ export default function Nav() {
 				<div className={showSubNav ? "subnav active" : "subnav hidden"}>
 					<ul className="subnav__items">
 						<li>
-							<Link to="#">desks</Link>
+							<Link to="/products/desks">desks</Link>
 						</li>
 						<li>
-							<Link to="#">tables</Link>
+							<Link to="/products/tables">tables</Link>
 						</li>
 						<li>
-							<Link to="#">CHAIRS, SOFAS</Link>
+							<Link to="/products/chairs">CHAIRS, SOFAS</Link>
 						</li>
 						<li>
-							<Link to="#">BEDS AND BEDSTOCKS</Link>
+							<Link to="/products/beds">BEDS AND BEDSTOCKS</Link>
 						</li>
 					</ul>
 				</div>
