@@ -124,4 +124,10 @@ export const cardData = [
 		img: "https://images.unsplash.com/photo-1486946255434-2466348c2166?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		price: 123,
 	},
+	{
+		id: 6,
+		title: "SUPER Great desk!!!!",
+		img: "https://images.pexels.com/photos/1957478/pexels-photo-1957478.jpeg?auto=compress&cs=tinysrgb&w=1600",
+		price: 123,
+	},
 ];
