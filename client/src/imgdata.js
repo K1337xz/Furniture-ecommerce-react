@@ -98,36 +98,48 @@ export const cardData = [
 		id: 1,
 		title: "Cool Desk",
 		img: "https://images.unsplash.com/photo-1593062096033-9a26b09da705?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		hoverImg:
+			"https://images.unsplash.com/photo-1526657782461-9fe13402a841?q=80&w=1984&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 		price: 123,
 	},
 	{
 		id: 2,
 		title: "Very cool desk",
 		img: "https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		price: 123,
+		hoverImg:
+			"https://images.unsplash.com/photo-1486946255434-2466348c2166?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		price: 1223,
 	},
 	{
 		id: 3,
 		title: "The best desk",
 		img: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=1536&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		price: 123,
+		hoverImg:
+			"https://images.unsplash.com/photo-1542546068979-b6affb46ea8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fG9mZmljZSUyMGRlc2t8ZW58MHx8MHx8fDA%3D",
+		price: 33,
 	},
 	{
 		id: 4,
 		title: "Desk like desk",
 		img: "https://images.unsplash.com/photo-1555212697-194d092e3b8f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		price: 123,
+		hoverImg:
+			"https://images.unsplash.com/photo-1493934558415-9d19f0b2b4d2?q=80&w=2054&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		price: 623,
 	},
 	{
 		id: 5,
 		title: "Great desk!!!!",
 		img: "https://images.unsplash.com/photo-1486946255434-2466348c2166?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		price: 123,
+		hoverImg:
+			"https://images.unsplash.com/photo-1526887593587-a307ea5d46b4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		price: 900,
 	},
 	{
 		id: 6,
 		title: "SUPER Great desk!!!!",
 		img: "https://images.pexels.com/photos/1957478/pexels-photo-1957478.jpeg?auto=compress&cs=tinysrgb&w=1600",
-		price: 123,
+		hoverImg:
+			"https://images.unsplash.com/photo-1618211535056-e678b388af32?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+		price: 2000,
 	},
 ];

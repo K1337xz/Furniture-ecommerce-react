@@ -11,11 +11,11 @@ export default function ProductsCard({ item }) {
 						className="productCard__mainImg"
 						alt="main img"
 					/>
-					{/* 			<img
-						src={item.img}
+					<img
+						src={item.hoverImg}
 						className="productCard__hoverImg"
 						alt="hover img"
-					/> */}
+					/>
 				</div>
 				<div className="productCard__lowerCard">
 					<h2>{item.title}</h2>

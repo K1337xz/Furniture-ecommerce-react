@@ -7,20 +7,19 @@ header {
 	justify-content: center;
 	flex-direction: column;
 	width: 100%;
-	height: 14vh;
+	height: 16vh;
 	background-color: $color50;
 	z-index: 3;
 	&.active {
 		position: sticky;
 		top: 0;
-		height: 12vh;
+		height: 16vh;
 		transition: transform 150ms ease-in-out;
 	}
 	&.hidden {
 		position: sticky;
-
 		top: 0;
-		height: 12vh;
+		height: 16vh;
 		transition: transform 150ms ease-in-out;
 		transform: translateY(-100%);
 	}
@@ -224,7 +223,7 @@ header {
 			}
 		}
 		&__logo {
-			width: 30%;
+			width: 25%;
 		}
 	}
 }
