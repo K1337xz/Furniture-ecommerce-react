@@ -4,6 +4,7 @@ import Aboutpage from "./pages/aboutpage/Aboutpage.jsx";
 import Materialspage from "./pages/materialspage/Materialspage.jsx";
 import Contactpage from "./pages/contactpage/Contactpage.jsx";
 import Productspage from "./pages/productspage/Productspage.jsx";
+import ClickedProduct from "./pages/clickedproductpage/ClickedProduct.jsx";
 
 import "./App.css";
 
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
 	{
 		path: "/products/:id",
 		element: <Productspage />,
+	},
+	{
+		path: "/product/:category/:id",
+		element: <ClickedProduct />,
 	},
 ]);
 

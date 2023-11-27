@@ -3,9 +3,13 @@ import Footer from "../../components/footer/Footer";
 import ProductsCard from "../../components/productsCard/ProudctsCard";
 import { cardData } from "../../imgdata";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import "./productspage.scss";
+
 export default function Productspage() {
+	const params = useParams();
 	const [filterPrice, setFilterPrice] = useState(1000);
+
 	return (
 		<>
 			<Nav />
@@ -55,7 +59,11 @@ export default function Productspage() {
 					</div>
 					<div className="products__productsCards">
 						{cardData.map((items) => (
-							<ProductsCard key={items.id} item={items} />
+							<ProductsCard
+								key={items.id}
+								item={items}
+								link={`/product/${params.id}/${items.id}`}
+							/>
 						))}
 					</div>
 				</div>

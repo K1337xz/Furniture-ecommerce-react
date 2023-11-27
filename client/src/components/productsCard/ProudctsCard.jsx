@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./productscard.scss";
 
-export default function ProductsCard({ item }) {
+export default function ProductsCard({ item, link }) {
 	return (
-		<Link className="productCard">
+		<Link className="productCard" to={link}>
 			<div className="productCard__card">
 				<div className="productCard__image">
 					<img
