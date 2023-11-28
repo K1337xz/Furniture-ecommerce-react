@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { cardData } from "../../imgdata";
+import NumberButton from "../../components/numberButton/NumberButton";
 import Nav from "../../components/navbar/Nav";
 import "./clcikedproduct.scss";
 
@@ -27,8 +28,10 @@ export default function ClickedProduct() {
 								</p>
 								<p>{cardData[params.id].desc}</p>
 							</div>
+							<div className="clickedProduct__buttons">
+								<NumberButton />
+							</div>
 						</div>
-						<div className="clickedProduct__buttons"></div>
 					</div>
 				</div>
 			</main>

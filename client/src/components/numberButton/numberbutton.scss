@@ -1,0 +1,38 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
+.numberButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 13vh;
+	width: 13%;
+	input[type="number"] {
+		text-align: center;
+		width: 30%;
+		height: 40%;
+		-moz-appearance: textfield;
+		border-top: 1px solid $color400;
+		border-bottom: 1px solid $color400;
+		border-left: none;
+		border-right: none;
+		outline: none;
+		font-size: 1rem;
+		color: $color600;
+	}
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30%;
+		height: 40%;
+		cursor: pointer;
+		background-color: $color100;
+		border: 1px solid $color400;
+	}
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
