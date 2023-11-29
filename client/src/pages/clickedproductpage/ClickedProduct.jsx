@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom";
 import { cardData } from "../../imgdata";
+import { BsCartPlus } from "react-icons/bs";
 import NumberButton from "../../components/numberButton/NumberButton";
 import Nav from "../../components/navbar/Nav";
+import Footer from "../../components/footer/Footer";
 import "./clcikedproduct.scss";
+import { useState } from "react";
 
 export default function ClickedProduct() {
+	const [cartAmont, setCartAmount] = useState(0);
 	const params = useParams();
+
 	return (
 		<>
 			<Nav />
@@ -26,15 +31,41 @@ export default function ClickedProduct() {
 								<p className="clickedProduct__price">
 									{cardData[params.id].price} $
 								</p>
-								<p>{cardData[params.id].desc}</p>
+								<p className="clickedProduct__lowerDesc">
+									{cardData[params.id].desc}
+								</p>
 							</div>
 							<div className="clickedProduct__buttons">
-								<NumberButton />
+								<NumberButton
+									amount={cartAmont}
+									toggleSubtract={() => {
+										cartAmont > 0
+											? setCartAmount(cartAmont - 1)
+											: setCartAmount(0);
+									}}
+									toggleAdd={() => {
+										setCartAmount(cartAmont + 1);
+									}}
+									toggleChange={(e) => {
+										setCartAmount(Number(e.target.value));
+									}}
+								/>
+								<input
+									type="submit"
+									value="ADD TO CART"
+									className="clickedProduct__addToCart"
+								/>
+								<input
+									type="submit"
+									value="ADD TO WISH LIST"
+									className="clickedProduct__addToWishList"
+								/>
 							</div>
 						</div>
 					</div>
 				</div>
 			</main>
+			<Footer />
 		</>
 	);
 }
