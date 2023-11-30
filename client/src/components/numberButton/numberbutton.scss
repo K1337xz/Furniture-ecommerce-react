@@ -4,9 +4,9 @@
 .numberButton {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
 	height: 13vh;
-	width: 13%;
+	width: 20%;
 	input[type="number"] {
 		text-align: center;
 		width: 30%;

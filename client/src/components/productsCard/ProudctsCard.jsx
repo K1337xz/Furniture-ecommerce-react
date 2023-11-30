@@ -12,7 +12,7 @@ export default function ProductsCard({ item, link }) {
 						alt="main img"
 					/>
 					<img
-						src={item.hoverImg}
+						src={item.img[1]}
 						className="productCard__hoverImg"
 						alt="hover img"
 					/>

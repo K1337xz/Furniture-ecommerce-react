@@ -8,8 +8,9 @@ import "./clcikedproduct.scss";
 import { useState } from "react";
 
 export default function ClickedProduct() {
-	const [cartAmont, setCartAmount] = useState(0);
 	const params = useParams();
+	const [cartAmont, setCartAmount] = useState(0);
+	const [clickedImage, setClickedImage] = useState();
 
 	return (
 		<>
@@ -19,10 +20,27 @@ export default function ClickedProduct() {
 					<div className="clickedProduct__content">
 						<div className="clickedProduct__leftProduct">
 							<div className="clickedProduct__leftThumbnails">
-								<img src={cardData[params.id].hoverImg} />
+								{cardData[params.id].img.map((item) => {
+									return (
+										<img
+											key={item}
+											src={item}
+											alt="thumbnail"
+											onClick={(e) => {
+												setClickedImage(e.target.src);
+											}}
+										/>
+									);
+								})}
 							</div>
 							<div className="clickedProduct__mainImg">
-								<img src={cardData[params.id].img} />
+								<img
+									src={
+										clickedImage
+											? clickedImage
+											: cardData[params.id].img
+									}
+								/>
 							</div>
 						</div>
 						<div className="clickedProduct__rightDesc">
