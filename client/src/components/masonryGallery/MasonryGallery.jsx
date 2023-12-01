@@ -27,7 +27,7 @@ export default function MasonryGallery() {
 		if (imageIndex === 11) {
 			setImageIndex(0);
 		} else {
-			setImageIndex((prev) => (prev += 1));
+			setImageIndex(imageIndex + 1);
 		}
 	};
 
@@ -35,7 +35,7 @@ export default function MasonryGallery() {
 		if (imageIndex === 0) {
 			setImageIndex(11);
 		} else {
-			setImageIndex((prev) => (prev -= 1));
+			setImageIndex(imageIndex - 1);
 		}
 	};
 	return (
