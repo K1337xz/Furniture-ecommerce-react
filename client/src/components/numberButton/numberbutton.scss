@@ -36,3 +36,8 @@ input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
+@include media("<=phone") {
+	.numberButton {
+		width: 40%;
+	}
+}
