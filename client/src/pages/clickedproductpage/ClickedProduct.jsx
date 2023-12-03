@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartSlice";
 import { cardData } from "../../imgdata";
 import { motion, AnimatePresence, wrap } from "framer-motion";
 import { AiOutlineClose } from "react-icons/ai";
@@ -43,9 +45,11 @@ export default function ClickedProduct() {
 	const [cartAmont, setCartAmount] = useState(0);
 	const [clickedImage, setClickedImage] = useState();
 	const [imageIndex, setImageIndex] = useState(0);
+	const dispatch = useDispatch();
+	const data = cardData[params.id];
 
 	const toggleNext = () => {
-		if (imageIndex === cardData[params.id].img.length - 1) {
+		if (imageIndex === data.img.length - 1) {
 			setImageIndex(0);
 		} else {
 			setImageIndex(imageIndex + 1);
@@ -54,7 +58,7 @@ export default function ClickedProduct() {
 
 	const toggleBack = () => {
 		if (imageIndex === 0) {
-			setImageIndex(cardData[params.id].img.length - 1);
+			setImageIndex(data.img.length - 1);
 		} else {
 			setImageIndex(imageIndex - 1);
 		}
@@ -68,7 +72,7 @@ export default function ClickedProduct() {
 					<div className="clickedProduct__content">
 						<div className="clickedProduct__leftProduct">
 							<div className="clickedProduct__leftThumbnails">
-								{cardData[params.id].img.map((item) => {
+								{data.img.map((item) => {
 									return (
 										<img
 											key={item}
@@ -83,11 +87,7 @@ export default function ClickedProduct() {
 							</div>
 							<div className="clickedProduct__mainImg">
 								<img
-									src={
-										clickedImage
-											? clickedImage
-											: cardData[params.id].img
-									}
+									src={clickedImage ? clickedImage : data.img}
 								/>
 							</div>
 						</div>
@@ -99,9 +99,7 @@ export default function ClickedProduct() {
 								>
 									<motion.img
 										key={imageIndex}
-										src={
-											cardData[params.id].img[imageIndex]
-										}
+										src={data.img[imageIndex]}
 										custom={direction}
 										variants={slideVariants}
 										initial="enter"
@@ -132,8 +130,7 @@ export default function ClickedProduct() {
 												-swipeConfidenceThreshold
 											) {
 												imageIndex ===
-												cardData[params.id].img.length -
-													1
+												data.img.length - 1
 													? setImageIndex(0)
 													: setImageIndex(
 															imageIndex + 1
@@ -162,12 +159,12 @@ export default function ClickedProduct() {
 						</div>
 						<div className="clickedProduct__rightDesc">
 							<div className="clickedProduct__desc">
-								<h2>{cardData[params.id].title}</h2>
+								<h2>{data.title}</h2>
 								<p className="clickedProduct__price">
-									{cardData[params.id].price} $
+									{data.price} $
 								</p>
 								<p className="clickedProduct__lowerDesc">
-									{cardData[params.id].desc}
+									{data.desc}
 								</p>
 							</div>
 							<div className="clickedProduct__buttons">
@@ -189,6 +186,15 @@ export default function ClickedProduct() {
 									type="submit"
 									value="ADD TO CART"
 									className="clickedProduct__addToCart"
+									onClick={() =>
+										dispatch(
+											addToCart({
+												title: data.title,
+												price: data.price,
+												img: data.img[0],
+											})
+										)
+									}
 								/>
 								<input
 									type="submit"

@@ -1,11 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
 import Homepage from "./pages/homepage/Homepage";
 import Aboutpage from "./pages/aboutpage/Aboutpage.jsx";
 import Materialspage from "./pages/materialspage/Materialspage.jsx";
 import Contactpage from "./pages/contactpage/Contactpage.jsx";
 import Productspage from "./pages/productspage/Productspage.jsx";
 import ClickedProduct from "./pages/clickedproductpage/ClickedProduct.jsx";
-
+import store from "./redux/store.jsx";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -37,9 +38,11 @@ const router = createBrowserRouter([
 
 function App() {
 	return (
-		<div>
-			<RouterProvider router={router} />
-		</div>
+		<Provider store={store}>
+			<div>
+				<RouterProvider router={router} />
+			</div>
+		</Provider>
 	);
 }
 

@@ -1,4 +1,5 @@
 import Nav from "../../components/navbar/Nav";
+import { useSelector } from "react-redux";
 import Heroslider from "../../components/heroslider/Heroslider";
 import MiddleCard from "../../components/middleCard/MiddleCard";
 import { Link } from "react-router-dom";
@@ -9,6 +10,8 @@ import FramerDiv from "../../components/framerDiv/FramerDiv";
 import "./homepage.scss";
 
 export default function Homepage() {
+	const cartItems = useSelector((state) => state.cart.cart);
+	console.log(cartItems);
 	return (
 		<>
 			<Nav />
