@@ -79,6 +79,24 @@ header {
 			font-weight: 400;
 		}
 	}
+	&__cart {
+		position: relative;
+		span {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			right: -2px;
+			top: -4px;
+			font-size: 0.563rem;
+			color: $color50;
+			background-color: $color400;
+			font-weight: 700;
+		}
+	}
 }
 .subnav {
 	display: flex;

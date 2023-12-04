@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import logoblack from "../../assets/furniture-logos_transparent.png";
 import scrollNav from "../../hooks/scrollNav";
 import MobileNav from "../mobileNav/MobileNav";
@@ -9,6 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./nav.scss";
 
 export default function Nav() {
+	const cartItems = useSelector((state) => state.cart.cart);
 	const [showNav, setShowNav] = useState(true);
 	const [showSubNav, setShowSubNav] = useState(true);
 	const scroll = scrollNav();
@@ -50,7 +52,12 @@ export default function Nav() {
 						<div className="nav__right">
 							<FiSearch className="nav__right--icons" />
 							<FiUser className="nav__right--icons" />
-							<FiShoppingCart className="nav__right--icons" />
+							<div className="nav__cart">
+								{cartItems.length > 0 && (
+									<span>{cartItems.length}</span>
+								)}
+								<FiShoppingCart className="nav__right--icons" />
+							</div>
 						</div>
 					</div>
 					<MobileNav />

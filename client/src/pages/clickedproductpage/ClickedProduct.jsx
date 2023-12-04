@@ -47,6 +47,7 @@ export default function ClickedProduct() {
 	const [imageIndex, setImageIndex] = useState(0);
 	const dispatch = useDispatch();
 	const data = cardData[params.id];
+	const [errorInp, setErrorInp] = useState(false);
 
 	const toggleNext = () => {
 		if (imageIndex === data.img.length - 1) {
@@ -182,19 +183,26 @@ export default function ClickedProduct() {
 										setCartAmount(Number(e.target.value));
 									}}
 								/>
+								{errorInp && <span>Ammount cannot be 0</span>}
 								<input
 									type="submit"
 									value="ADD TO CART"
 									className="clickedProduct__addToCart"
-									onClick={() =>
-										dispatch(
-											addToCart({
-												title: data.title,
-												price: data.price,
-												img: data.img[0],
-											})
-										)
-									}
+									onClick={() => {
+										if (cartAmont === 0) {
+											setErrorInp(true);
+										} else {
+											dispatch(
+												addToCart({
+													title: data.title,
+													price: data.price,
+													img: data.img[0],
+													ammount: cartAmont,
+												})
+											);
+											setErrorInp(false);
+										}
+									}}
 								/>
 								<input
 									type="submit"
