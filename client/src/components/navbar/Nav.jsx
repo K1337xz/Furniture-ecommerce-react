@@ -52,12 +52,14 @@ export default function Nav() {
 						<div className="nav__right">
 							<FiSearch className="nav__right--icons" />
 							<FiUser className="nav__right--icons" />
-							<div className="nav__cart">
-								{cartItems.length > 0 && (
-									<span>{cartItems.length}</span>
-								)}
-								<FiShoppingCart className="nav__right--icons" />
-							</div>
+							<Link to={"/cart"}>
+								<div className="nav__cart">
+									{cartItems.length > 0 && (
+										<span>{cartItems.length}</span>
+									)}
+									<FiShoppingCart className="nav__right--icons" />
+								</div>
+							</Link>
 						</div>
 					</div>
 					<MobileNav />

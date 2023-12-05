@@ -6,6 +6,7 @@ import Materialspage from "./pages/materialspage/Materialspage.jsx";
 import Contactpage from "./pages/contactpage/Contactpage.jsx";
 import Productspage from "./pages/productspage/Productspage.jsx";
 import ClickedProduct from "./pages/clickedproductpage/ClickedProduct.jsx";
+import CartPage from "./pages/cartpage/CartPage.jsx";
 import store from "./redux/store.jsx";
 import "./App.css";
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
 	{
 		path: "/product/:category/:id",
 		element: <ClickedProduct />,
+	},
+	{
+		path: "/cart",
+		element: <CartPage />,
 	},
 ]);
 

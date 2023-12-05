@@ -72,6 +72,10 @@ header {
 		justify-content: flex-end;
 		width: 340px;
 		gap: 20px;
+		a {
+			color: $color950;
+			text-decoration: none;
+		}
 		&--icons {
 			cursor: pointer;
 			width: 25px;
@@ -81,6 +85,10 @@ header {
 	}
 	&__cart {
 		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		span {
 			position: absolute;
 			display: flex;
