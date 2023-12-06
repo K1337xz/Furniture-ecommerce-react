@@ -1,5 +1,6 @@
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
+import Cart from "../../components/cart/Cart";
 import "./cartpage.scss";
 
 export default function CartPage() {
@@ -24,7 +25,9 @@ export default function CartPage() {
 							</ul>
 						</div>
 					</div>
-					<div className="cartPage__cartContent"></div>
+					<div className="cartPage__cartContent">
+						<Cart />
+					</div>
 				</div>
 			</main>
 			<Footer />

@@ -7,9 +7,10 @@ export default function NumberButton({
 	toggleSubtract,
 	toggleAdd,
 	toggleChange,
+	style,
 }) {
 	return (
-		<div className="numberButton">
+		<div className="numberButton" style={style}>
 			<div className="numberButton__button" onClick={toggleSubtract}>
 				<FaMinus />
 			</div>
