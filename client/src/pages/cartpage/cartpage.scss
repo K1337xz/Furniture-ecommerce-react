@@ -1,3 +1,6 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
 .cartPage {
 	display: flex;
 	align-items: center;
@@ -39,5 +42,43 @@
 		list-style: none;
 		text-transform: uppercase;
 		font-size: 1.375rem;
+	}
+	&__items {
+		font-weight: 300;
+		&.active {
+			border-bottom: 1px solid $color400;
+			font-weight: 600;
+		}
+	}
+	&__cartContent {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+		padding: 65px 40px;
+		width: 100%;
+		height: 50vh;
+	}
+	&__topCartContent {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 50%;
+	}
+}
+table {
+	width: 65%;
+
+	thead {
+		height: 10vh;
+	}
+	th {
+		text-align: left;
+		padding: 15px 10px;
+		border-bottom: 1px solid #0b152865;
+	}
+	td {
+		text-align: left;
+		padding: 15px 10px;
 	}
 }
