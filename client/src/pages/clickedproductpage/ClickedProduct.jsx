@@ -194,6 +194,7 @@ export default function ClickedProduct() {
 										} else {
 											dispatch(
 												addToCart({
+													id: Date.now().toString(36),
 													title: data.title,
 													price: data.price,
 													img: data.img[0],

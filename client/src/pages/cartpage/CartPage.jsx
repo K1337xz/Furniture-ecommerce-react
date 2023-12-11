@@ -6,6 +6,7 @@ import "./cartpage.scss";
 
 export default function CartPage() {
 	const cartItems = useSelector((state) => state.cart.cart);
+
 	return (
 		<>
 			<Nav />
@@ -28,7 +29,7 @@ export default function CartPage() {
 					<div className="cartPage__cartContent">
 						{cartItems.length === 0 && <h3>CART IS EMPTY!</h3>}
 						{cartItems.length > 0 && (
-							<table cellspacing="0">
+							<table cellSpacing="0">
 								<thead>
 									<tr>
 										<th className="cartPager__remove"></th>
@@ -45,6 +46,7 @@ export default function CartPage() {
 										<th className="cartPager__total">
 											Total
 										</th>
+										<th className="cartPager__update"></th>
 									</tr>
 								</thead>
 								<Cart />
