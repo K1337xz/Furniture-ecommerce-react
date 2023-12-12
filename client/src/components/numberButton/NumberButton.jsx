@@ -8,6 +8,7 @@ export default function NumberButton({
 	toggleAdd,
 	toggleChange,
 	style,
+	toggleDisable,
 }) {
 	return (
 		<div className="numberButton" style={style}>
@@ -18,7 +19,9 @@ export default function NumberButton({
 				type="number"
 				value={amount}
 				max="0"
+				min="1"
 				onChange={toggleChange}
+				disabled={toggleDisable}
 			/>
 			<div className="numberButton__button" onClick={toggleAdd}>
 				<FaPlus />

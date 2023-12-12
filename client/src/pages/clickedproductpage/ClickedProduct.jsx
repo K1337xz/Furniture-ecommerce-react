@@ -42,12 +42,12 @@ export default function ClickedProduct() {
 	};
 	const [[page, direction], setPage] = useState([0, 0]);
 	const params = useParams();
-	const [cartAmont, setCartAmount] = useState(0);
+	const [cartAmont, setCartAmount] = useState(1);
 	const [clickedImage, setClickedImage] = useState();
 	const [imageIndex, setImageIndex] = useState(0);
-	const dispatch = useDispatch();
 	const data = cardData[params.id];
 	const [errorInp, setErrorInp] = useState(false);
+	const dispatch = useDispatch();
 
 	const toggleNext = () => {
 		if (imageIndex === data.img.length - 1) {
@@ -174,7 +174,7 @@ export default function ClickedProduct() {
 									toggleSubtract={() => {
 										cartAmont > 0
 											? setCartAmount(cartAmont - 1)
-											: setCartAmount(0);
+											: setCartAmount(1);
 									}}
 									toggleAdd={() => {
 										setCartAmount(cartAmont + 1);
@@ -198,7 +198,7 @@ export default function ClickedProduct() {
 													title: data.title,
 													price: data.price,
 													img: data.img[0],
-													ammount: cartAmont,
+													amount: cartAmont,
 												})
 											);
 											setErrorInp(false);

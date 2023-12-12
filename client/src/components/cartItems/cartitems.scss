@@ -9,4 +9,10 @@
 	&__title {
 		font-weight: 300;
 	}
+	&__removeItem {
+		cursor: pointer;
+	}
+	&__total {
+		width: 15%;
+	}
 }

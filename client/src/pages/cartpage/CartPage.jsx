@@ -46,11 +46,18 @@ export default function CartPage() {
 										<th className="cartPager__total">
 											Total
 										</th>
-										<th className="cartPager__update"></th>
 									</tr>
 								</thead>
 								<Cart />
 							</table>
+						)}
+						{cartItems.length > 0 && (
+							<div className="cartPage__rightContent">
+								<div className="cartPage__leftTotalBasket">
+									<p>Basket</p>
+									<p>Total Payment</p>
+								</div>
+							</div>
 						)}
 					</div>
 				</div>

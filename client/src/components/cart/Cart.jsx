@@ -15,7 +15,7 @@ export default function Cart() {
 						cartId={item.id}
 						image={item.img}
 						title={item.title}
-						ammount={item.ammount}
+						amount={item.amount}
 						price={item.price}
 						total={item.ammount * item.price}
 					/>
