@@ -1,3 +1,6 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
 .cartItem {
 	&__image {
 		width: 180px;
@@ -14,5 +17,21 @@
 	}
 	&__total {
 		width: 15%;
+	}
+}
+@include media("<=phone") {
+	.cartItem {
+		&__image {
+			width: 100px;
+			img {
+				height: 70px;
+			}
+		}
+		&__title {
+			font-size: 0.8rem;
+		}
+		&__total {
+			display: none;
+		}
 	}
 }

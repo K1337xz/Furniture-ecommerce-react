@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import logoblack from "../../assets/furniture-logos_transparent.png";
 import { FiMenu, FiSearch, FiUser, FiShoppingCart } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
@@ -8,6 +9,7 @@ import { IconContext } from "react-icons";
 import "./mobileNav.scss";
 
 export default function MobileNav() {
+	const cartItems = useSelector((state) => state.cart.cart);
 	const [showCategories, setShowCategories] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const variants = {
@@ -30,7 +32,14 @@ export default function MobileNav() {
 				</div>
 				<div className="mobileNav__right">
 					<FiUser className="mobileNav__icons" />
-					<FiShoppingCart className="mobileNav__icons" />
+					<Link to={"/cart"}>
+						<div className="nav__cart">
+							{cartItems.length > 0 && (
+								<span>{cartItems.length}</span>
+							)}
+							<FiShoppingCart className="mobileNav__icons" />
+						</div>
+					</Link>
 				</div>
 				<AnimatePresence>
 					<motion.div

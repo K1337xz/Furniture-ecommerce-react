@@ -46,7 +46,7 @@ export default function CartItems({
 			<td className="cartItem__ammount">
 				<NumberButton
 					toggleDisable={true}
-					style={{ width: "70%" }}
+					style={{ width: "100%" }}
 					amount={amount}
 					toggleSubtract={() => {
 						if (amount === 1) {
