@@ -43,7 +43,7 @@ export default function CartItems({
 			<td className="cartItem__price">
 				<p>{price} $</p>
 			</td>
-			<td className="cartItem__ammount">
+			<td className="cartItem__amount">
 				<NumberButton
 					toggleDisable={true}
 					style={{ width: "100%" }}

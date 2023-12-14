@@ -178,6 +178,9 @@
 		&__nav {
 			font-size: 0.9rem;
 		}
+		&__topHeader {
+			justify-content: center;
+		}
 		&__cartContent {
 			flex-direction: column;
 			gap: 2rem;
@@ -199,12 +202,102 @@
 		tbody {
 			width: 100%;
 			tr {
+				position: relative;
 				display: flex;
 				width: 100%;
 				align-items: center;
 				justify-content: center;
 				gap: 15px;
 			}
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.cartPage {
+		&__nav {
+			font-size: 0.9rem;
+		}
+		&__topHeader {
+			justify-content: center;
+		}
+		&__cartContent {
+			flex-direction: column;
+			gap: 2rem;
+			padding: 20px 3px;
+		}
+		&__rightContent {
+			width: 75%;
+			height: 40vh;
+		}
+	}
+	.tableDesktop {
+		display: none;
+	}
+	.tableMobile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		tbody {
+			width: 100%;
+			tr {
+				position: relative;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+				gap: 40px;
+			}
+		}
+	}
+}
+@include media(">=tablet", "<=1024px") {
+	.cartPage {
+		&__nav {
+			font-size: 0.9rem;
+		}
+		&__topHeader {
+			justify-content: center;
+		}
+		&__cartContent {
+			flex-direction: column;
+			gap: 2rem;
+			padding: 20px 3px;
+		}
+		&__rightContent {
+			width: 75%;
+			height: 40vh;
+		}
+	}
+	.tableDesktop {
+		display: none;
+	}
+	.tableMobile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		tbody {
+			width: 100%;
+			tr {
+				position: relative;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+				gap: 40px;
+			}
+		}
+	}
+}
+@include media(">=1023px", "<=desktop") {
+	.cartPage {
+		&__cartContent {
+			padding: 65px 0px;
+		}
+		&__rightContent {
+			width: 40%;
+			height: 29vh;
 		}
 	}
 }

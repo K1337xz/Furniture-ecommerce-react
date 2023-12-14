@@ -22,9 +22,9 @@
 @include media("<=phone") {
 	.cartItem {
 		&__image {
-			width: 100px;
+			width: 75px;
 			img {
-				height: 70px;
+				height: 50px;
 			}
 		}
 		&__title {
@@ -32,6 +32,78 @@
 		}
 		&__total {
 			display: none;
+		}
+		&__removeItem {
+			position: absolute;
+			right: 20px;
+			top: -10px;
+		}
+		&__amount {
+			width: 25%;
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.cartItem {
+		&__image {
+			width: 155px;
+			img {
+				height: 100px;
+			}
+		}
+		&__title {
+			display: flex;
+			align-items: center;
+			font-size: 0.9rem;
+			width: 30%;
+		}
+		&__price {
+			display: flex;
+			align-items: center;
+			width: 15%;
+		}
+		&__total {
+			display: none;
+		}
+		&__removeItem {
+			position: absolute;
+			right: 20px;
+			top: -10px;
+		}
+		&__amount {
+			width: 20%;
+		}
+	}
+}
+@include media(">=tablet", "<=1024px") {
+	.cartItem {
+		&__image {
+			width: 155px;
+			img {
+				height: 100px;
+			}
+		}
+		&__title {
+			display: flex;
+			align-items: center;
+			font-size: 0.9rem;
+			width: 30%;
+		}
+		&__price {
+			display: flex;
+			align-items: center;
+			width: 15%;
+		}
+		&__total {
+			display: none;
+		}
+		&__removeItem {
+			position: absolute;
+			right: 20px;
+			top: -10px;
+		}
+		&__amount {
+			width: 20%;
 		}
 	}
 }
