@@ -1,0 +1,89 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
+.tableDesktop {
+	width: 65%;
+	thead {
+		height: 10vh;
+	}
+	th {
+		text-align: left;
+		padding: 15px 10px;
+		border-bottom: 1px solid #0b152865;
+	}
+	td {
+		text-align: left;
+		padding: 15px 10px;
+		border-bottom: 1px solid #0b152865;
+	}
+}
+.tableMobile {
+	display: none;
+}
+
+@include media("<=phone") {
+	.tableDesktop {
+		display: none;
+	}
+	.tableMobile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		tbody {
+			width: 100%;
+			tr {
+				position: relative;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+				gap: 15px;
+			}
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.tableDesktop {
+		display: none;
+	}
+	.tableMobile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		tbody {
+			width: 100%;
+			tr {
+				position: relative;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+				gap: 40px;
+			}
+		}
+	}
+}
+@include media(">=tablet", "<=1024px") {
+	.tableDesktop {
+		display: none;
+	}
+	.tableMobile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		tbody {
+			width: 100%;
+			tr {
+				position: relative;
+				display: flex;
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+				gap: 40px;
+			}
+		}
+	}
+}

@@ -191,26 +191,6 @@
 			height: 40vh;
 		}
 	}
-	.tableDesktop {
-		display: none;
-	}
-	.tableMobile {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		tbody {
-			width: 100%;
-			tr {
-				position: relative;
-				display: flex;
-				width: 100%;
-				align-items: center;
-				justify-content: center;
-				gap: 15px;
-			}
-		}
-	}
 }
 @include media(">=phone", "<=tablet") {
 	.cartPage {
@@ -230,26 +210,6 @@
 			height: 40vh;
 		}
 	}
-	.tableDesktop {
-		display: none;
-	}
-	.tableMobile {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		tbody {
-			width: 100%;
-			tr {
-				position: relative;
-				display: flex;
-				width: 100%;
-				align-items: center;
-				justify-content: center;
-				gap: 40px;
-			}
-		}
-	}
 }
 @include media(">=tablet", "<=1024px") {
 	.cartPage {
@@ -267,26 +227,6 @@
 		&__rightContent {
 			width: 75%;
 			height: 40vh;
-		}
-	}
-	.tableDesktop {
-		display: none;
-	}
-	.tableMobile {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		tbody {
-			width: 100%;
-			tr {
-				position: relative;
-				display: flex;
-				width: 100%;
-				align-items: center;
-				justify-content: center;
-				gap: 40px;
-			}
 		}
 	}
 }

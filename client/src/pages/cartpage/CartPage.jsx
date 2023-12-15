@@ -10,7 +10,9 @@ import "./cartpage.scss";
 import { multiStepCart } from "../../hooks/multiStepCart";
 
 export default function CartPage() {
-	const { steps, step } = multiStepCart([<CartContentPage />]);
+	const { steps, step, currentStepIndex } = multiStepCart([
+		<CartContentPage />,
+	]);
 	const cartItems = useSelector((state) => state.cart.cart);
 	const total = useSelector((state) => state.cart.total);
 	const amount = useSelector((state) => state.cart.amount);
@@ -29,9 +31,31 @@ export default function CartPage() {
 						</div>
 						<div className="cartPage__topNav">
 							<ul className="cartPage__nav">
-								<li className="cartPage__items active">Cart</li>
-								<li className="cartPage__items">Check out</li>
-								<li className="cartPage__items">
+								<li
+									className={
+										currentStepIndex === 0
+											? "cartPage__items active"
+											: "cartPage__items"
+									}
+								>
+									Cart
+								</li>
+								<li
+									className={
+										currentStepIndex === 1
+											? "cartPage__items active"
+											: "cartPage__items"
+									}
+								>
+									Check out
+								</li>
+								<li
+									className={
+										currentStepIndex === 2
+											? "cartPage__items active"
+											: "cartPage__items"
+									}
+								>
 									ORDER COMPLETE
 								</li>
 							</ul>
