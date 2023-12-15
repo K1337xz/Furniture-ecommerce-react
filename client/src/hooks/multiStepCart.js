@@ -1,27 +1,34 @@
 import { useState } from "react";
 
 export function multiStepCart(steps) {
-	const [currentStepId, setCurrentStepId] = useState(0);
+	const [currentStepIndex, setCurrentStepIndex] = useState(0);
 
 	function next() {
-		setCurrentStepId((i) => {
+		setCurrentStepIndex((i) => {
 			if (i >= steps.length - 1) return i;
 			return i + 1;
 		});
 	}
-	function goBack() {
-		if (i <= 0) return i;
-		return i - 1;
+
+	function back() {
+		setCurrentStepIndex((i) => {
+			if (i <= 0) return i;
+			return i - 1;
+		});
 	}
-	function goTo(id) {
-		setCurrentStepId(id);
+
+	function goTo(index) {
+		setCurrentStepIndex(index);
 	}
+
 	return {
-		currentStepId,
-		step: steps[currentStepId],
-		goTo,
-		goBack,
-		next,
+		currentStepIndex,
+		step: steps[currentStepIndex],
 		steps,
+		isFirstStep: currentStepIndex === 0,
+		isLastStep: currentStepIndex === steps.length - 1,
+		goTo,
+		next,
+		back,
 	};
 }
