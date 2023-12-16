@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
 import Cart from "../../components/cart/Cart";
+import { multiStepCart } from "../../hooks/multiStepCart";
 
 export default function CartContentPage() {
-	const total = useSelector((state) => state.cart.total);
-	const amount = useSelector((state) => state.cart.amount);
 	return (
 		<>
 			<table cellSpacing="0" className="tableDesktop">
@@ -23,26 +22,6 @@ export default function CartContentPage() {
 				<thead></thead>
 				<Cart />
 			</table>
-			<div className="cartPage__rightContent">
-				<div className="cartPage__rightContentWrapper">
-					<div className="cartPage__leftTotalBasket">
-						<p>Basket Amount</p>
-						<p>Total</p>
-					</div>
-					<div className="cartPage__rightTotalBasket">
-						<span>{amount}</span>
-						<span>{total} $</span>
-					</div>
-				</div>
-				<button className="cartPage__checkoutBtn">Checkout</button>
-
-				<div className="cartPage__promoCode">
-					<form className="cartPage__form">
-						<input type="text" placeholder="Enter Your promocode" />
-						<input type="submit" value="Enter" />
-					</form>
-				</div>
-			</div>
 		</>
 	);
 }

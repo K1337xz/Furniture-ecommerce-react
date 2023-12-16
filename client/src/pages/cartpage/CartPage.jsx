@@ -10,8 +10,9 @@ import "./cartpage.scss";
 import { multiStepCart } from "../../hooks/multiStepCart";
 
 export default function CartPage() {
-	const { steps, step, currentStepIndex } = multiStepCart([
+	const { steps, step, currentStepIndex, next } = multiStepCart([
 		<CartContentPage />,
+		<div>xD</div>,
 	]);
 	const cartItems = useSelector((state) => state.cart.cart);
 	const total = useSelector((state) => state.cart.total);
@@ -63,7 +64,42 @@ export default function CartPage() {
 					</div>
 					<div className="cartPage__cartContent">
 						{cartItems.length === 0 && <h3>CART IS EMPTY!</h3>}
-						{cartItems.length > 0 && step}
+						{cartItems.length > 0 && (
+							<>
+								{step}
+								<div className="cartPage__rightContent">
+									<div className="cartPage__rightContentWrapper">
+										<div className="cartPage__leftTotalBasket">
+											<p>Basket Amount</p>
+											<p>Total</p>
+										</div>
+										<div className="cartPage__rightTotalBasket">
+											<span>{amount}</span>
+											<span>{total} $</span>
+										</div>
+									</div>
+									<button
+										className="cartPage__checkoutBtn"
+										onClick={next}
+									>
+										Checkout
+									</button>
+
+									<div className="cartPage__promoCode">
+										<form className="cartPage__form">
+											<input
+												type="text"
+												placeholder="Enter Your promocode"
+											/>
+											<input
+												type="submit"
+												value="Enter"
+											/>
+										</form>
+									</div>
+								</div>
+							</>
+						)}
 					</div>
 				</div>
 			</main>
