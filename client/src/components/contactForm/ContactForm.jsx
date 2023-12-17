@@ -22,7 +22,6 @@ export default function ContactForm() {
 		resolver: yupResolver(schema),
 	});
 
-	console.log(errors);
 	const toggleSend = (data) => {
 		console.log(data);
 	};
