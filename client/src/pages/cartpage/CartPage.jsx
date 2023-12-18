@@ -3,6 +3,7 @@ import Footer from "../../components/footer/Footer";
 import Cart from "../../components/cart/Cart";
 import { useEffect } from "react";
 import CartContentPage from "../../components/cartContentPage/CartContentPage";
+import CheckoutForm from "../../components/chcekoutForm/CheckoutForm";
 import { useSelector, useDispatch } from "react-redux";
 import { calculateTotal } from "../../redux/cartSlice";
 
@@ -12,7 +13,7 @@ import { multiStepCart } from "../../hooks/multiStepCart";
 export default function CartPage() {
 	const { steps, step, currentStepIndex, next } = multiStepCart([
 		<CartContentPage />,
-		<div>xD</div>,
+		<CheckoutForm />,
 	]);
 	const cartItems = useSelector((state) => state.cart.cart);
 	const total = useSelector((state) => state.cart.total);
