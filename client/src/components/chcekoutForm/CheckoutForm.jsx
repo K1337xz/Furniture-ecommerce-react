@@ -13,6 +13,17 @@ const schema = yup.object({
 		.required("Email is required!"),
 	street: yup.string().required("street is required"),
 	country: yup.string().required("country is required"),
+	phone: yup
+		.string()
+		.required("Phone is a required field")
+		.matches(
+			/^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+			"Invalid phone number format"
+		),
+	zipcode: yup
+		.string()
+		.required("Zipcode is a required field")
+		.matches(/^[0-9.-]*$/, "Invalid zipcode format"),
 });
 
 export default function CheckoutForm() {
@@ -86,7 +97,9 @@ export default function CheckoutForm() {
 					</div>
 					<select
 						{...register("country")}
-						className={errors.topic ? "checkoutForm__errorInp" : ""}
+						className={
+							errors.country ? "checkoutForm__errorInp" : ""
+						}
 					>
 						<option>---SELECT COUNTRY ----</option>
 						{countries.map((item) => {
@@ -99,7 +112,7 @@ export default function CheckoutForm() {
 					</select>
 					{errors.topic && (
 						<span className="checkoutForm__error">
-							{errors.topic.message}
+							{errors.country.message}
 						</span>
 					)}
 				</label>
@@ -113,12 +126,48 @@ export default function CheckoutForm() {
 					<input
 						{...register("street")}
 						className={
-							errors.message ? "checkoutForm__errorInp" : ""
+							errors.street ? "checkoutForm__errorInp" : ""
 						}
 					/>
-					{errors.message && (
+					{errors.street && (
 						<span className="checkoutForm__error">
-							{errors.message.message}
+							{errors.street.message}
+						</span>
+					)}
+				</label>
+			</div>
+			<div className="checkoutForm__inputWrapp">
+				<label>
+					<div className="checkoutForm__top">
+						<p>ZIP Code </p>
+						<span>*</span>
+					</div>
+					<input
+						{...register("zipcode")}
+						className={
+							errors.zipcode ? "checkoutForm__errorInp" : ""
+						}
+					/>
+					{errors.zipcode && (
+						<span className="checkoutForm__error">
+							{errors.zipcode.message}
+						</span>
+					)}
+				</label>
+			</div>
+			<div className="checkoutForm__inputWrapp">
+				<label>
+					<div className="checkoutForm__top">
+						<p>Phone Number</p>
+						<span>*</span>
+					</div>
+					<input
+						{...register("phone")}
+						className={errors.phone ? "checkoutForm__errorInp" : ""}
+					/>
+					{errors.phone && (
+						<span className="checkoutForm__error">
+							{errors.phone.message}
 						</span>
 					)}
 				</label>
