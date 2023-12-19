@@ -19,6 +19,9 @@ const cartSlice = createSlice({
 				state.cart.push(action.payload);
 			}
 		},
+		clearCart: (state) => {
+			state.cart = [];
+		},
 		removeItemFromCart: (state, action) => {
 			const itemId = action.payload;
 			console.log(itemId);
@@ -57,4 +60,5 @@ export const {
 	increase,
 	decrease,
 	calculateTotal,
+	clearCart,
 } = cartSlice.actions;

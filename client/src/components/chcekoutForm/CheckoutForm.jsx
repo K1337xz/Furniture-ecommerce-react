@@ -17,7 +17,7 @@ const schema = yup.object({
 		.string()
 		.required("Phone is a required field")
 		.matches(
-			/^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+			/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/,
 			"Invalid phone number format"
 		),
 	zipcode: yup
@@ -26,7 +26,7 @@ const schema = yup.object({
 		.matches(/^[0-9.-]*$/, "Invalid zipcode format"),
 });
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ submit }) {
 	const [countries, setCountries] = useState([]);
 	const {
 		register,
@@ -177,6 +177,7 @@ export default function CheckoutForm() {
 					type="submit"
 					value="Send"
 					className="checkoutForm__sendBtn"
+					onClick={submit}
 				/>
 			</div>
 		</form>
