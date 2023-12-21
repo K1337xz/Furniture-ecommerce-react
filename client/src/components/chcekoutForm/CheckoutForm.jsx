@@ -28,6 +28,7 @@ const schema = yup.object({
 
 export default function CheckoutForm({ submit }) {
 	const [countries, setCountries] = useState([]);
+	const [checkOutData, setCheckOutData] = useState([]);
 	const {
 		register,
 		formState: { errors },
@@ -36,7 +37,7 @@ export default function CheckoutForm({ submit }) {
 		resolver: yupResolver(schema),
 	});
 	const toggleSend = (data) => {
-		console.log(data);
+		setCheckOutData(data);
 	};
 
 	useEffect(() => {
@@ -54,7 +55,7 @@ export default function CheckoutForm({ submit }) {
 	}, []);
 
 	return (
-		<form className="checkoutForm" onSubmit={handleSubmit(toggleSend)}>
+		<form className="checkoutForm" onSubmit={handleSubmit(submit)}>
 			<div className="checkoutForm__inputWrapp">
 				<label>
 					<div className="checkoutForm__top">
@@ -175,9 +176,8 @@ export default function CheckoutForm({ submit }) {
 			<div className="checkoutForm__sendWrapper">
 				<input
 					type="submit"
-					value="Send"
+					value="Checkout"
 					className="checkoutForm__sendBtn"
-					onClick={submit}
 				/>
 			</div>
 		</form>

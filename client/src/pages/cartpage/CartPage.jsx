@@ -17,8 +17,9 @@ export default function CartPage() {
 	const amount = useSelector((state) => state.cart.amount);
 	const dispatch = useDispatch();
 
-	const submitCheckout = (e) => {
+	const submitCheckout = (data) => {
 		setTimeout(() => {
+			console.log(data);
 			next();
 			dispatch(clearCart());
 		}, 3000);
@@ -94,12 +95,14 @@ export default function CartPage() {
 													<span>{total} $</span>
 												</div>
 											</div>
-											<button
-												className="cartPage__checkoutBtn"
-												onClick={next}
-											>
-												Checkout
-											</button>
+											{currentStepIndex != 1 && (
+												<button
+													className="cartPage__checkoutBtn"
+													onClick={next}
+												>
+													Checkout
+												</button>
+											)}
 
 											<div className="cartPage__promoCode">
 												<form className="cartPage__form">
