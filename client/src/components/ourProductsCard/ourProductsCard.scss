@@ -43,9 +43,11 @@
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
+		background-color: white;
 		box-shadow: 1px 6px 11px 4px #060a1431;
 		overflow: hidden;
 		transition: transform 0.5s ease-in;
+
 		cursor: pointer;
 		&:hover {
 			img {
