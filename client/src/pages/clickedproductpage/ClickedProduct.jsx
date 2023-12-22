@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
@@ -14,6 +14,7 @@ import NumberButton from "../../components/numberButton/NumberButton";
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import "./clcikedproduct.scss";
+import axios from "axios";
 
 export default function ClickedProduct() {
 	const slideVariants = {
@@ -45,10 +46,10 @@ export default function ClickedProduct() {
 	const [cartAmont, setCartAmount] = useState(1);
 	const [clickedImage, setClickedImage] = useState();
 	const [imageIndex, setImageIndex] = useState(0);
-	const data = cardData[params.id];
+	const [clickedData, setClickedData] = useState([]);
+	const [imageData, setImageData] = useState([]);
 	const [errorInp, setErrorInp] = useState(false);
 	const dispatch = useDispatch();
-
 	const toggleNext = () => {
 		if (imageIndex === data.img.length - 1) {
 			setImageIndex(0);
@@ -65,6 +66,26 @@ export default function ClickedProduct() {
 		}
 	};
 
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const data = await axios.get(
+					`http://localhost:1337/api/products/${params.id}/?populate=images`
+				);
+				setClickedData(data.data.data);
+				setImageData(data.data.data.attributes.images.data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		fetchData();
+	}, []);
+
+	console.log(
+		imageData.map((item) => {
+			console.log(item.attributes.url);
+		})
+	);
 	return (
 		<>
 			<Nav />
@@ -73,11 +94,11 @@ export default function ClickedProduct() {
 					<div className="clickedProduct__content">
 						<div className="clickedProduct__leftProduct">
 							<div className="clickedProduct__leftThumbnails">
-								{data.img.map((item) => {
+								{imageData?.map((item) => {
 									return (
 										<img
 											key={item}
-											src={item}
+											src={`http://localhost:1337${item.attributes.url}`}
 											alt="thumbnail"
 											onClick={(e) => {
 												setClickedImage(e.target.src);
@@ -88,7 +109,11 @@ export default function ClickedProduct() {
 							</div>
 							<div className="clickedProduct__mainImg">
 								<img
-									src={clickedImage ? clickedImage : data.img}
+									src={
+										clickedImage
+											? clickedImage
+											: `http://localhost:1337${clickedData?.attributes?.images?.data[0]?.attributes?.url}`
+									}
 								/>
 							</div>
 						</div>
@@ -100,7 +125,6 @@ export default function ClickedProduct() {
 								>
 									<motion.img
 										key={imageIndex}
-										src={data.img[imageIndex]}
 										custom={direction}
 										variants={slideVariants}
 										initial="enter"
@@ -160,12 +184,15 @@ export default function ClickedProduct() {
 						</div>
 						<div className="clickedProduct__rightDesc">
 							<div className="clickedProduct__desc">
-								<h2>{data.title}</h2>
+								<h2>{clickedData?.attributes?.Name}</h2>
 								<p className="clickedProduct__price">
-									{data.price} $
+									{clickedData?.attributes?.price} $
 								</p>
 								<p className="clickedProduct__lowerDesc">
-									{data.desc}
+									{
+										clickedData?.attributes?.description[0]
+											?.children[0]?.text
+									}
 								</p>
 							</div>
 							<div className="clickedProduct__buttons">
@@ -195,9 +222,13 @@ export default function ClickedProduct() {
 											dispatch(
 												addToCart({
 													id: Date.now().toString(36),
-													title: data.title,
-													price: data.price,
-													img: data.img[0],
+													title: clickedData
+														?.attributes?.Name,
+													price: clickedData
+														?.attributes?.price,
+													img: clickedData?.attributes
+														?.images?.data[0]
+														?.attributes?.url,
 													amount: cartAmont,
 												})
 											);

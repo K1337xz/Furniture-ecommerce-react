@@ -1,15 +1,33 @@
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import ProductsCard from "../../components/productsCard/ProudctsCard";
-import { cardData } from "../../imgdata";
-import { useState } from "react";
+/* import { cardData } from "../../imgdata"; */
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./productspage.scss";
+import axios from "axios";
 
 export default function Productspage() {
 	const params = useParams();
 	const [filterPrice, setFilterPrice] = useState(1000);
-
+	const [cardData, setCardData] = useState([]);
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const data = await axios.get(
+					`http://localhost:1337/api/products/?populate=images&populate=hoverImage&filters[$and][0][category][$eq]=${params.id}`
+				);
+				setCardData(data.data.data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		fetchData();
+	}, [params.id]);
+	console.log(cardData);
+	cardData.map((item) => {
+		console.log(item.attributes.images.data[0].attributes.url);
+	});
 	return (
 		<>
 			<Nav />

@@ -76,7 +76,9 @@ export default function Nav() {
 							<Link to="/products/chairs">CHAIRS, SOFAS</Link>
 						</li>
 						<li>
-							<Link to="/products/beds">BEDS AND BEDSTOCKS</Link>
+							<Link to="/products/bedsbedsitde">
+								BEDS AND BEDSTOCKS
+							</Link>
 						</li>
 					</ul>
 				</div>
