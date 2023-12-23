@@ -23,6 +23,7 @@ export default function CartItems({
 	const existCartItem = cartItem.filter((cart) => cart.id == cartId);
 
 	const dispatch = useDispatch();
+	console.log(cartItem);
 
 	return (
 		<tr className="cartItem" id={cartId}>
@@ -35,7 +36,10 @@ export default function CartItems({
 				<IoMdClose />
 			</td>
 			<td className="cartItem__image">
-				<img src={image} alt="cart thumbnail" />
+				<img
+					src={`http://localhost:1337${image}`}
+					alt="cart thumbnail"
+				/>
 			</td>
 			<td className="cartItem__title">
 				<h3>{title}</h3>
