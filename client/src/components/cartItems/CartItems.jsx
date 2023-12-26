@@ -23,7 +23,6 @@ export default function CartItems({
 	const existCartItem = cartItem.filter((cart) => cart.id == cartId);
 
 	const dispatch = useDispatch();
-	console.log(cartItem);
 
 	return (
 		<tr className="cartItem" id={cartId}>

@@ -92,7 +92,9 @@ export default function CartPage() {
 												</div>
 												<div className="cartPage__rightTotalBasket">
 													<span>{amount}</span>
-													<span>{total} $</span>
+													<span>
+														{total.toFixed(2)}$
+													</span>
 												</div>
 											</div>
 											{currentStepIndex != 1 && (
