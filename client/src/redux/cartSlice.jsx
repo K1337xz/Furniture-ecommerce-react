@@ -49,11 +49,9 @@ const cartSlice = createSlice({
 			cartItem.amount = cartItem.amount + 1;
 		},
 		decrease: (state, { payload }) => {
-			const copyOfCart = [...itm];
 			const cartItem = state.cart.find(
 				(item) => item.id === payload.cartId
 			);
-
 			cartItem.amount = cartItem.amount - 1;
 		},
 		calculateTotal: (state) => {

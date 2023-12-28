@@ -9,13 +9,19 @@ import axios from "axios";
 
 export default function Productspage() {
 	const params = useParams();
-	const [filterPrice, setFilterPrice] = useState(1000);
+	const [filterPrice, setFilterPrice] = useState(6000);
 	const [cardData, setCardData] = useState([]);
+	const [radioValue, setRadioValue] = useState("ASC");
+
+	const onRadioChange = (e) => {
+		setRadioValue(e.target.value);
+	};
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
 				const data = await axios.get(
-					`http://localhost:1337/api/products/?populate=images&populate=hoverImage&filters[$and][0][category][$eq]=${params.id}`
+					`http://localhost:1337/api/products/?populate=images&populate=hoverImage&sort=price:${radioValue}&filters[$and][0][category][$eq]=${params.id}&filters[$and][1][price][$lte]=${filterPrice}`
 				);
 				setCardData(data.data.data);
 			} catch (error) {
@@ -23,11 +29,8 @@ export default function Productspage() {
 			}
 		};
 		fetchData();
-	}, [params.id]);
-	console.log(cardData);
-	cardData.map((item) => {
-		console.log(item.attributes.images.data[0].attributes.url);
-	});
+	}, [params.id, radioValue, filterPrice]);
+
 	return (
 		<>
 			<Nav />
@@ -42,7 +45,7 @@ export default function Productspage() {
 									<input
 										type="range"
 										min={0}
-										max={1000}
+										max={6000}
 										onChange={(e) => {
 											setFilterPrice(e.target.value);
 										}}
@@ -60,6 +63,7 @@ export default function Productspage() {
 											id="asc"
 											value="asc"
 											name="price"
+											onChange={onRadioChange}
 										/>
 									</label>
 									<label htmlFor="desc">
@@ -69,6 +73,7 @@ export default function Productspage() {
 											id="desc"
 											value="desc"
 											name="price"
+											onChange={onRadioChange}
 										/>
 									</label>
 								</div>

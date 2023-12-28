@@ -21,7 +21,6 @@ export default function CartItems({
 	const [isChanged, setIsChanged] = useState(false);
 	const cartItem = useSelector((state) => state.cart.cart);
 	const existCartItem = cartItem.filter((cart) => cart.id == cartId);
-
 	const dispatch = useDispatch();
 
 	return (
