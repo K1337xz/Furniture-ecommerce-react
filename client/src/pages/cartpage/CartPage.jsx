@@ -56,10 +56,10 @@ export default function CartPage() {
 				reqBody
 			);
 
-			const session = await response.json();
 			await stripe.redirectToCheckout({
-				sessionId: session.id,
+				sessionId: data.data.id,
 			});
+			console.log(session);
 		} catch (error) {
 			console.log(error);
 		}
