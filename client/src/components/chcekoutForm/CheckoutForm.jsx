@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { loadStripe } from "@stripe/stripe-js";
+
 import "./checkoutform.scss";
 
 const schema = yup.object({
@@ -28,8 +28,6 @@ const schema = yup.object({
 		.matches(/^[0-9.-]*$/, "Invalid zipcode format"),
 });
 
-const stripePromise = loadStripe(`${import.meta.env.VITE_SOME_KEY}`);
-
 export default function CheckoutForm({ submit }) {
 	const cartItem = useSelector((state) => state.cart.cart);
 	const [countries, setCountries] = useState([]);
@@ -45,27 +43,6 @@ export default function CheckoutForm({ submit }) {
 		setCheckOutData(data);
 		makePayment(values);
 	};
-
-	async function makePayment(values) {
-		const stripe = await stripePromise;
-		const reqBody = {
-			userName: checkOutData.names,
-			email: checkOutData.email,
-			products: cartItem.map({ id, amount, price }),
-		};
-		try {
-			const data = await axios.post(
-				"http://localhost:1337/api/orders",
-				JSON.stringify(reqBody)
-			);
-			const session = await data.json();
-			await stripe.redirectToCheckout({
-				sessionId: session.id,
-			});
-		} catch (error) {
-			console.log(error);
-		}
-	}
 
 	useEffect(() => {
 		const fetchData = async () => {

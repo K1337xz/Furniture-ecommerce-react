@@ -81,11 +81,6 @@ export default function ClickedProduct() {
 		fetchData();
 	}, []);
 
-	console.log(
-		imageData.map((item) => {
-			console.log(item.attributes.url);
-		})
-	);
 	return (
 		<>
 			<Nav />
@@ -221,7 +216,7 @@ export default function ClickedProduct() {
 										} else {
 											dispatch(
 												addToCart({
-													id: Date.now().toString(36),
+													id: params.id,
 													title: clickedData
 														?.attributes?.Name,
 													price: clickedData

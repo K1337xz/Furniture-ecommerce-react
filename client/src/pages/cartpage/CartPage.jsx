@@ -1,15 +1,21 @@
+import { useEffect } from "react";
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import Cart from "../../components/cart/Cart";
-import { useEffect } from "react";
+
 import CartContentPage from "../../components/cartContentPage/CartContentPage";
 import CheckoutForm from "../../components/chcekoutForm/CheckoutForm";
 import { useSelector, useDispatch } from "react-redux";
 import { calculateTotal } from "../../redux/cartSlice";
 import { clearCart } from "../../redux/cartSlice";
-
-import "./cartpage.scss";
+import { loadStripe } from "@stripe/stripe-js";
 import { multiStepCart } from "../../hooks/multiStepCart";
+import axios from "axios";
+import "./cartpage.scss";
+
+const stripePromise = loadStripe(
+	"pk_test_51OUV2eFDAoS63k8a7nFqpU4cGbBID8IfSrJeHkUaNnoizZCnTSgDS0rWDh9lg3fUujY9zcPqBwLnXulgVH2ZQhaV0055IbvChM"
+);
 
 export default function CartPage() {
 	const cartItems = useSelector((state) => state.cart.cart);
@@ -20,8 +26,9 @@ export default function CartPage() {
 	const submitCheckout = (data) => {
 		setTimeout(() => {
 			console.log(data);
-			next();
-			dispatch(clearCart());
+			makePayment(data);
+			/* 		next();
+			dispatch(clearCart()); */
 		}, 3000);
 	};
 	const { steps, step, currentStepIndex, next } = multiStepCart([
@@ -29,6 +36,34 @@ export default function CartPage() {
 		<CheckoutForm submit={submitCheckout} />,
 		<div>ORDER XXXXD COMPLETE</div>,
 	]);
+
+	console.log(cartItems);
+	async function makePayment(values) {
+		const stripe = await stripePromise;
+		const reqBody = {
+			userName: values.names,
+			email: values.email,
+			products: cartItems.map(({ id, amount, price, title }) => ({
+				id,
+				amount,
+				price,
+				title,
+			})),
+		};
+		try {
+			const data = await axios.post(
+				"http://localhost:1337/api/orders",
+				reqBody
+			);
+
+			const session = await response.json();
+			await stripe.redirectToCheckout({
+				sessionId: session.id,
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
 	useEffect(() => {
 		dispatch(calculateTotal());
