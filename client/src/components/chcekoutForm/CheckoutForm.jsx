@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -59,131 +60,145 @@ export default function CheckoutForm({ submit }) {
 	}, []);
 
 	return (
-		<form className="checkoutForm" onSubmit={handleSubmit(submit)}>
-			<div className="checkoutForm__inputWrapp">
-				<label>
-					<div className="checkoutForm__top">
-						<p>First and Last name </p>
-						<span>*</span>
-					</div>
+		<>
+			<form className="checkoutForm" onSubmit={handleSubmit(submit)}>
+				<div className="checkoutForm__acc">
+					<p>
+						If you already have an account.
+						<Link to="/login"> Click to log in</Link>
+					</p>
+				</div>
+				<div className="checkoutForm__inputWrapp">
+					<label>
+						<div className="checkoutForm__top">
+							<p>First and Last name </p>
+							<span>*</span>
+						</div>
+						<input
+							{...register("names")}
+							className={
+								errors.names ? "checkoutForm__errorInp" : ""
+							}
+						/>
+						{errors.names && (
+							<span className="checkoutForm__error">
+								{errors.names.message}
+							</span>
+						)}
+					</label>
+				</div>
+				<div className="checkoutForm__inputWrapp">
+					<label>
+						<div className="checkoutForm__top">
+							<p>Email</p>
+							<span>*</span>
+						</div>
+						<input
+							{...register("email")}
+							className={
+								errors.email ? "checkoutForm__errorInp" : ""
+							}
+						/>
+						{errors.email && (
+							<span className="checkoutForm__error">
+								{errors.email.message}
+							</span>
+						)}
+					</label>
+				</div>
+				<div className="checkoutForm__inputWrapp">
+					<label>
+						<div className="checkoutForm__top">
+							<p>Country</p>
+							<span>*</span>
+						</div>
+						<select
+							{...register("country")}
+							className={
+								errors.country ? "checkoutForm__errorInp" : ""
+							}
+						>
+							<option>---SELECT COUNTRY ----</option>
+							{countries.map((item) => {
+								return (
+									<option key={item.name.common}>
+										{item.name.common}
+									</option>
+								);
+							})}
+						</select>
+						{errors.topic && (
+							<span className="checkoutForm__error">
+								{errors.country.message}
+							</span>
+						)}
+					</label>
+				</div>
+				<div className="checkoutForm__inputWrapp">
+					<label>
+						<div className="checkoutForm__top">
+							<p>Street</p>
+							<span>*</span>
+						</div>
+						<input
+							{...register("street")}
+							className={
+								errors.street ? "checkoutForm__errorInp" : ""
+							}
+						/>
+						{errors.street && (
+							<span className="checkoutForm__error">
+								{errors.street.message}
+							</span>
+						)}
+					</label>
+				</div>
+				<div className="checkoutForm__inputWrapp">
+					<label>
+						<div className="checkoutForm__top">
+							<p>ZIP Code </p>
+							<span>*</span>
+						</div>
+						<input
+							{...register("zipcode")}
+							className={
+								errors.zipcode ? "checkoutForm__errorInp" : ""
+							}
+						/>
+						{errors.zipcode && (
+							<span className="checkoutForm__error">
+								{errors.zipcode.message}
+							</span>
+						)}
+					</label>
+				</div>
+				<div className="checkoutForm__inputWrapp">
+					<label>
+						<div className="checkoutForm__top">
+							<p>Phone Number</p>
+							<span>*</span>
+						</div>
+						<input
+							{...register("phone")}
+							className={
+								errors.phone ? "checkoutForm__errorInp" : ""
+							}
+						/>
+						{errors.phone && (
+							<span className="checkoutForm__error">
+								{errors.phone.message}
+							</span>
+						)}
+					</label>
+				</div>
+				<div className="checkoutForm__sendWrapper">
 					<input
-						{...register("names")}
-						className={errors.names ? "checkoutForm__errorInp" : ""}
+						type="submit"
+						value="Checkout"
+						className="checkoutForm__sendBtn"
 					/>
-					{errors.names && (
-						<span className="checkoutForm__error">
-							{errors.names.message}
-						</span>
-					)}
-				</label>
-			</div>
-			<div className="checkoutForm__inputWrapp">
-				<label>
-					<div className="checkoutForm__top">
-						<p>Email</p>
-						<span>*</span>
-					</div>
-					<input
-						{...register("email")}
-						className={errors.email ? "checkoutForm__errorInp" : ""}
-					/>
-					{errors.email && (
-						<span className="checkoutForm__error">
-							{errors.email.message}
-						</span>
-					)}
-				</label>
-			</div>
-			<div className="checkoutForm__inputWrapp">
-				<label>
-					<div className="checkoutForm__top">
-						<p>Country</p>
-						<span>*</span>
-					</div>
-					<select
-						{...register("country")}
-						className={
-							errors.country ? "checkoutForm__errorInp" : ""
-						}
-					>
-						<option>---SELECT COUNTRY ----</option>
-						{countries.map((item) => {
-							return (
-								<option key={item.name.common}>
-									{item.name.common}
-								</option>
-							);
-						})}
-					</select>
-					{errors.topic && (
-						<span className="checkoutForm__error">
-							{errors.country.message}
-						</span>
-					)}
-				</label>
-			</div>
-			<div className="checkoutForm__inputWrapp">
-				<label>
-					<div className="checkoutForm__top">
-						<p>Street</p>
-						<span>*</span>
-					</div>
-					<input
-						{...register("street")}
-						className={
-							errors.street ? "checkoutForm__errorInp" : ""
-						}
-					/>
-					{errors.street && (
-						<span className="checkoutForm__error">
-							{errors.street.message}
-						</span>
-					)}
-				</label>
-			</div>
-			<div className="checkoutForm__inputWrapp">
-				<label>
-					<div className="checkoutForm__top">
-						<p>ZIP Code </p>
-						<span>*</span>
-					</div>
-					<input
-						{...register("zipcode")}
-						className={
-							errors.zipcode ? "checkoutForm__errorInp" : ""
-						}
-					/>
-					{errors.zipcode && (
-						<span className="checkoutForm__error">
-							{errors.zipcode.message}
-						</span>
-					)}
-				</label>
-			</div>
-			<div className="checkoutForm__inputWrapp">
-				<label>
-					<div className="checkoutForm__top">
-						<p>Phone Number</p>
-						<span>*</span>
-					</div>
-					<input
-						{...register("phone")}
-						className={errors.phone ? "checkoutForm__errorInp" : ""}
-					/>
-					{errors.phone && (
-						<span className="checkoutForm__error">
-							{errors.phone.message}
-						</span>
-					)}
-				</label>
-			</div>
-			<div className="checkoutForm__sendWrapper">
-				<input
-					type="submit"
-					value="Checkout"
-					className="checkoutForm__sendBtn"
-				/>
-			</div>
-		</form>
+				</div>
+			</form>
+		</>
 	);
 }

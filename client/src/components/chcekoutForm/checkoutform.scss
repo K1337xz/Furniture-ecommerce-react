@@ -86,6 +86,14 @@
 	&__sendWrapper {
 		width: 70%;
 	}
+	&__acc {
+		width: 70%;
+		height: 5vh;
+		a {
+			color: $color400;
+			font-weight: 700;
+		}
+	}
 }
 
 @include media("<=phone") {

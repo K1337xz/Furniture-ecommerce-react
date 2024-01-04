@@ -34,10 +34,8 @@ export default function CartPage() {
 	const { steps, step, currentStepIndex, next } = multiStepCart([
 		<CartContentPage />,
 		<CheckoutForm submit={submitCheckout} />,
-		<div>ORDER XXXXD COMPLETE</div>,
 	]);
 
-	console.log(cartItems);
 	async function makePayment(values) {
 		const stripe = await stripePromise;
 		const reqBody = {

@@ -21,7 +21,7 @@ export default function OurProductsCard() {
 										className="ourProducts__productCard"
 										key={items.id}
 									>
-										<Link to="">
+										<Link to={`/products/${items.href}`}>
 											<img src={items.src} />
 										</Link>
 										<div className="ourProducts__productCard-description">

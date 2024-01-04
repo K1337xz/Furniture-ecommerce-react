@@ -7,6 +7,7 @@ import Contactpage from "./pages/contactpage/Contactpage.jsx";
 import Productspage from "./pages/productspage/Productspage.jsx";
 import ClickedProduct from "./pages/clickedproductpage/ClickedProduct.jsx";
 import CartPage from "./pages/cartpage/CartPage.jsx";
+import OrderPage from "./pages/ordersuccespage/OrderPage.jsx";
 import store from "./redux/store.jsx";
 import "./App.css";
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
 	{
 		path: "/cart",
 		element: <CartPage />,
+	},
+	{
+		path: "/checkout",
+		element: <OrderPage />,
 	},
 ]);
 
