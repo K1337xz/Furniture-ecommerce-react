@@ -26,7 +26,7 @@ export const images = [
 	{
 		id: 5,
 		desc: "Chairs",
-		src: "/assets/chair.jpg",
+		src: "C:UserskoporDocumentsProduct-preview-card-componentFurniture-ecommerce-reactclientsrcassetschair.jpg",
 		href: "chairs",
 	},
 	{

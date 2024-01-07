@@ -3,6 +3,7 @@ import FramerDiv from "../../components/framerDiv/FramerDiv";
 import { images } from "../../imgdata";
 import "./ourProductsCard.scss";
 export default function OurProductsCard() {
+	console.log(images);
 	return (
 		<>
 			<div className="ourProducts">
