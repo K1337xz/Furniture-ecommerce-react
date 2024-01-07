@@ -2,7 +2,7 @@ export const images = [
 	{
 		id: 1,
 		desc: "Tables",
-		src: "/src/assets/dining-table-one-new-another-country-clippings-11150825.webp",
+		src: "/assets/dining-table-one-new-another-country-clippings-11150825.webp",
 		href: "tables",
 	},
 	{
@@ -26,13 +26,13 @@ export const images = [
 	{
 		id: 5,
 		desc: "Chairs",
-		src: "/src/assets/chair.jpg",
+		src: "/assets/chair.jpg",
 		href: "chairs",
 	},
 	{
 		id: 6,
 		desc: "Sofas",
-		src: "/src/assets/sofa.jpg",
+		src: "/assets/sofa.jpg",
 		href: "chairs",
 	},
 ];
@@ -40,7 +40,7 @@ export const images = [
 export const heroSliderImages = [
 	{
 		title: "Black Leather Sofa",
-		src: "/src/assets/pexels-photo-276583.jpeg",
+		src: "/assets/pexels-photo-276583.jpeg",
 	},
 	{
 		title: "Cool Beds",
