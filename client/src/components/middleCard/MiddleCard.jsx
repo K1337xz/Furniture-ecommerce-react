@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import FramerDiv from "../../components/framerDiv/FramerDiv";
 import firstImg from "../../assets/firstImage.jpg";
 import secondImage from "../../assets/secondImage.jpg";
-import lastPhoto from "../../assets/lastPhoto.jpg";
+import lastphoto from "../../assets/lastPhoto.jpg";
 import "./middleCard.scss";
 
 export default function MiddleCard() {
@@ -102,7 +102,7 @@ export default function MiddleCard() {
 							</div>
 						</div>
 						<div className="middleInfo__cardRight">
-							<img src={lastPhoto} alt="second about photo" />
+							<img src={lastphoto} alt="second about photo" />
 						</div>
 					</div>
 				</FramerDiv>
