@@ -2,31 +2,31 @@ export const images = [
 	{
 		id: 1,
 		desc: "Tables",
-		src: "https://imgur.com/UDx2Yzo",
+		src: "https://i.imgur.com/UDx2Yzo.jpg",
 		href: "tables",
 	},
 	{
 		id: 2,
 		desc: "Shelves and Cabinets",
-		src: "https://imgur.com/a/BM0YLjq",
+		src: "https://i.imgur.com/h3yFmba.jpg",
 		href: "shelves",
 	},
 	{
 		id: 3,
 		desc: "Desks",
-		src: "https://imgur.com/a/kh5Czu8",
+		src: "https://i.imgur.com/kJTFEkn.jpg",
 		href: "desks",
 	},
 	{
 		id: 4,
 		desc: "Beds and Bedside tables",
-		src: "https://imgur.com/a/KsMoha2",
+		src: "https://i.imgur.com/fUf54gm.jpg",
 		href: "bedsbedsitde",
 	},
 	{
 		id: 5,
 		desc: "Chairs",
-		src: "https://imgur.com/a/NiUN4Xw",
+		src: "https://i.imgur.com/My39ayI.jpg",
 		href: "chairs",
 	},
 	{
