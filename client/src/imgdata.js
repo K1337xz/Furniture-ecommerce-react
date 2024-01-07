@@ -32,7 +32,7 @@ export const images = [
 	{
 		id: 6,
 		desc: "Sofas",
-		src: "https://imgur.com/e85uMvC",
+		src: "https://i.imgur.com/e85uMvC.jpg",
 		href: "chairs",
 	},
 ];
