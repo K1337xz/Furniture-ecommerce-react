@@ -40,7 +40,7 @@ export const images = [
 export const heroSliderImages = [
 	{
 		title: "Black Leather Sofa",
-		src: "/assets/pexels-photo-276583.jpeg",
+		src: "/assets/chair.jpg",
 	},
 	{
 		title: "Cool Beds",
