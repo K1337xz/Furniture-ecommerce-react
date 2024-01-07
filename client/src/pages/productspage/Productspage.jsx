@@ -21,7 +21,11 @@ export default function Productspage() {
 		const fetchData = async () => {
 			try {
 				const data = await axios.get(
-					`http://localhost:1337/api/products/?populate=images&populate=hoverImage&sort=price:${radioValue}&filters[$and][0][category][$eq]=${params.id}&filters[$and][1][price][$lte]=${filterPrice}`
+					`${
+						import.meta.env.VITE_API_URL
+					}/api/products/?populate=images&populate=hoverImage&sort=price:${radioValue}&filters[$and][0][category][$eq]=${
+						params.id
+					}&filters[$and][1][price][$lte]=${filterPrice}`
 				);
 				setCardData(data.data.data);
 			} catch (error) {

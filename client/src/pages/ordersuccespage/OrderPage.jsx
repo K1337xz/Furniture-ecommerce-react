@@ -1,7 +1,7 @@
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import { IoBagCheckOutline } from "react-icons/io5";
-import "./orderPage.scss";
+import "./OrderPage.scss";
 import { Link } from "react-router-dom";
 
 export default function OrderPage() {

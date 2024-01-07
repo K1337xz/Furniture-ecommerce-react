@@ -70,7 +70,7 @@ export default function ClickedProduct() {
 		const fetchData = async () => {
 			try {
 				const data = await axios.get(
-					`http://localhost:1337/api/products/${params.id}/?populate=images`
+					`https://api-furniture-e5qc.onrender.com/api/products/${params.id}/?populate=images`
 				);
 				setClickedData(data.data.data);
 				setImageData(data.data.data.attributes.images.data);
@@ -93,7 +93,9 @@ export default function ClickedProduct() {
 									return (
 										<img
 											key={item}
-											src={`http://localhost:1337${item.attributes.url}`}
+											src={`${
+												import.meta.env.VITE_API_URL
+											}${item.attributes.url}`}
 											alt="thumbnail"
 											onClick={(e) => {
 												setClickedImage(e.target.src);
@@ -107,7 +109,11 @@ export default function ClickedProduct() {
 									src={
 										clickedImage
 											? clickedImage
-											: `http://localhost:1337${clickedData?.attributes?.images?.data[0]?.attributes?.url}`
+											: `${import.meta.env.VITE_API_URL}${
+													clickedData?.attributes
+														?.images?.data[0]
+														?.attributes?.url
+											  }`
 									}
 								/>
 							</div>

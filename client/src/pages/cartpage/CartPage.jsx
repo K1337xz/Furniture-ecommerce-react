@@ -24,12 +24,8 @@ export default function CartPage() {
 	const dispatch = useDispatch();
 
 	const submitCheckout = (data) => {
-		setTimeout(() => {
-			console.log(data);
-			makePayment(data);
-			/* 		next();
-			dispatch(clearCart()); */
-		}, 3000);
+		makePayment(data);
+		dispatch(clearCart());
 	};
 	const { steps, step, currentStepIndex, next } = multiStepCart([
 		<CartContentPage />,
@@ -50,7 +46,7 @@ export default function CartPage() {
 		};
 		try {
 			const data = await axios.post(
-				"http://localhost:1337/api/orders",
+				"https://api-furniture-e5qc.onrender.com/api/orders",
 				reqBody
 			);
 

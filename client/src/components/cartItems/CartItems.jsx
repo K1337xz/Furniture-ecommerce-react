@@ -35,7 +35,7 @@ export default function CartItems({
 			</td>
 			<td className="cartItem__image">
 				<img
-					src={`http://localhost:1337${image}`}
+					src={`https://api-furniture-e5qc.onrender.com/${image}`}
 					alt="cart thumbnail"
 				/>
 			</td>
