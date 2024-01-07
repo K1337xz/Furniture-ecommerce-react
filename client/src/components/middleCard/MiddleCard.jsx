@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import FramerDiv from "../../components/framerDiv/FramerDiv";
 import firstImg from "../../assets/firstImage.jpg";
 import secondImage from "../../assets/secondImage.jpg";
-import lastphoto from "../../assets/lastPhoto.jpg";
+import lastphoto from "../../assets/lastphoto.jpg";
 import "./middleCard.scss";
 
 export default function MiddleCard() {
