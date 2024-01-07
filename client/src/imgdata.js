@@ -1,8 +1,10 @@
+import tables from "/assets/dining-table-one-new-another-country-clippings-11150825.webp";
+
 export const images = [
 	{
 		id: 1,
 		desc: "Tables",
-		src: "/assets/dining-table-one-new-another-country-clippings-11150825.webp",
+		src: tables,
 		href: "tables",
 	},
 	{
