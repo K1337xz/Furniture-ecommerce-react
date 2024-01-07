@@ -2,37 +2,37 @@ export const images = [
 	{
 		id: 1,
 		desc: "Tables",
-		src: "/assets/dining-table-one-new-another-country-clippings-11150825.webp",
+		src: "https://imgur.com/UDx2Yzo",
 		href: "tables",
 	},
 	{
 		id: 2,
 		desc: "Shelves and Cabinets",
-		src: "/assets/cabinets.jpg",
+		src: "https://imgur.com/a/BM0YLjq",
 		href: "shelves",
 	},
 	{
 		id: 3,
 		desc: "Desks",
-		src: "/assets/desk.jpg",
+		src: "https://imgur.com/a/kh5Czu8",
 		href: "desks",
 	},
 	{
 		id: 4,
 		desc: "Beds and Bedside tables",
-		src: "/assets/bed.jpg",
+		src: "https://imgur.com/a/KsMoha2",
 		href: "bedsbedsitde",
 	},
 	{
 		id: 5,
 		desc: "Chairs",
-		src: "C:UserskoporDocumentsProduct-preview-card-componentFurniture-ecommerce-reactclientsrcassetschair.jpg",
+		src: "https://imgur.com/a/NiUN4Xw",
 		href: "chairs",
 	},
 	{
 		id: 6,
 		desc: "Sofas",
-		src: "/assets/sofa.jpg",
+		src: "https://imgur.com/e85uMvC",
 		href: "chairs",
 	},
 ];
