@@ -8,19 +8,19 @@ export const images = [
 	{
 		id: 2,
 		desc: "Shelves and Cabinets",
-		src: "/src/assets/cabinets.jpg",
+		src: "/assets/cabinets.jpg",
 		href: "shelves",
 	},
 	{
 		id: 3,
 		desc: "Desks",
-		src: "/src/assets/desk.jpg",
+		src: "/assets/desk.jpg",
 		href: "desks",
 	},
 	{
 		id: 4,
 		desc: "Beds and Bedside tables",
-		src: "/src/assets/bed.jpg",
+		src: "/assets/bed.jpg",
 		href: "bedsbedsitde",
 	},
 	{
