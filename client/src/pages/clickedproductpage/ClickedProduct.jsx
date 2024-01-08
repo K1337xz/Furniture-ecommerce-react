@@ -93,9 +93,7 @@ export default function ClickedProduct() {
 									return (
 										<img
 											key={item}
-											src={`${
-												import.meta.env.VITE_API_URL
-											}${item.attributes.url}`}
+											src={item.attributes.url}
 											alt="thumbnail"
 											onClick={(e) => {
 												setClickedImage(e.target.src);
@@ -109,11 +107,8 @@ export default function ClickedProduct() {
 									src={
 										clickedImage
 											? clickedImage
-											: `${import.meta.env.VITE_API_URL}${
-													clickedData?.attributes
-														?.images?.data[0]
-														?.attributes?.url
-											  }`
+											: clickedData?.attributes?.images
+													?.data[0]?.attributes?.url
 									}
 								/>
 							</div>
