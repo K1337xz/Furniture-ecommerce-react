@@ -28,6 +28,7 @@ export default function Productspage() {
 					}&filters[$and][1][price][$lte]=${filterPrice}`
 				);
 				setCardData(data.data.data);
+				console.log(data.data.data);
 			} catch (error) {
 				console.log(error);
 			}

@@ -7,12 +7,12 @@ export default function ProductsCard({ item, link }) {
 			<div className="productCard__card">
 				<div className="productCard__image">
 					<img
-						src={`https://api-furniture-e5qc.onrender.com${item?.attributes?.images?.data[0]?.attributes?.url}`}
+						src={item?.attributes?.images?.data[0]?.attributes?.url}
 						className="productCard__mainImg"
 						alt="main img"
 					/>
 					<img
-						src={`https://api-furniture-e5qc.onrender.com${item?.attributes?.images?.data[1]?.attributes?.url}`}
+						src={item?.attributes?.images?.data[1]?.attributes?.url}
 						className="productCard__hoverImg"
 						alt="hover img"
 					/>
