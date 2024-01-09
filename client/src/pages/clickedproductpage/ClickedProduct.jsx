@@ -70,7 +70,9 @@ export default function ClickedProduct() {
 		const fetchData = async () => {
 			try {
 				const data = await axios.get(
-					`https://api-furniture-e5qc.onrender.com/api/products/${params.id}/?populate=images`
+					`${import.meta.env.VITE_API_URL}/api/products/${
+						params.id
+					}/?populate=images`
 				);
 				setClickedData(data.data.data);
 				setImageData(data.data.data.attributes.images.data);

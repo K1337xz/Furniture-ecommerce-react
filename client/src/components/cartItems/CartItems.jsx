@@ -34,10 +34,7 @@ export default function CartItems({
 				<IoMdClose />
 			</td>
 			<td className="cartItem__image">
-				<img
-					src={`https://api-furniture-e5qc.onrender.com/${image}`}
-					alt="cart thumbnail"
-				/>
+				<img src={image} alt="cart thumbnail" />
 			</td>
 			<td className="cartItem__title">
 				<h3>{title}</h3>
