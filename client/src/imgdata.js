@@ -40,7 +40,7 @@ export const images = [
 export const heroSliderImages = [
 	{
 		title: "Black Leather Sofa",
-		src: "/assets/chair.jpg",
+		src: "https://res.cloudinary.com/dfikloonm/image/upload/v1704740363/large_blacksofa_fdf8b25909_fae8dbba61.jpg",
 	},
 	{
 		title: "Cool Beds",
