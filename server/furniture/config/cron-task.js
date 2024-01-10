@@ -12,7 +12,7 @@ module.exports = {
     },
     options: {
       // Every minute
-      rule: "0/10 * * * * *",
+      rule: "0/11 * * * * *",
     },
   },
 };
