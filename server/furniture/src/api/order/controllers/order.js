@@ -29,8 +29,10 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         customer_email: email,
         payment_method_types: ["card"],
         mode: "payment",
-        success_url: "http://localhost:3000/checkout/?success=true",
-        cancel_url: "http://localhost:3000/checkout/?success=false",
+        success_url:
+          "https://furniture-ecommerce-react-gray.vercel.app/checkout/?success=true",
+        cancel_url:
+          "https://furniture-ecommerce-react-gray.vercel.app/checkout/?success=false",
         line_items: lineItems,
       });
       await strapi
