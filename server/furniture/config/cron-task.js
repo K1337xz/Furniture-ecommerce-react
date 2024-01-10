@@ -1,15 +1,15 @@
 module.exports = {
   productsCount: {
     task: async ({ strapi }) => {
+      console.log("cd");
       try {
-        console.log("strapi server restarted!");
       } catch (err) {
         console.error(err);
       }
     },
     options: {
       // Every minute
-      rule: "*/1 * * * *",
+      rule: "*/14 * * * *",
     },
   },
 };
