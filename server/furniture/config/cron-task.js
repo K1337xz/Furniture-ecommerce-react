@@ -3,13 +3,12 @@ module.exports = {
     task: async ({ strapi }) => {
       console.log("huh");
       try {
-        /*      await strapi.stop();
+        await strapi.stop();
         console.log("strapi server stopped");
 
         const strapiServer = await strapi.strapi();
         console.log("strapi server restarted!");
-        return strapiServer; */
-        console.log(`work at ${new Date()}`);
+        return strapiServer;
       } catch (err) {
         console.error(err);
       }
