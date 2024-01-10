@@ -1,7 +1,7 @@
 module.exports = {
   productsCount: {
     task: async ({ strapi }) => {
-      console.log("cd" + new Date());
+      console.log("hwj");
       try {
         console.log("cd" + new Date());
       } catch (err) {
