@@ -3,14 +3,14 @@ module.exports = {
     task: async ({ strapi }) => {
       console.log("hwj");
       try {
-        console.log("cd" + new Date());
+        console.log("work after 14min" + new Date());
       } catch (err) {
         console.error(err);
       }
     },
     options: {
       // Every minute
-      rule: "0/10 * * * * *",
+      rule: "/14 * * * *",
     },
   },
 };
