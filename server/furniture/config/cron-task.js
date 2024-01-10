@@ -5,6 +5,7 @@ module.exports = {
       try {
         console.log("work after 14min" + new Date());
         console.log("huh");
+        console.log("x");
       } catch (err) {
         console.error(err);
       }
