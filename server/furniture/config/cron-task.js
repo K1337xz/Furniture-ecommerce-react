@@ -5,9 +5,8 @@ module.exports = {
         await strapi.stop();
         console.log("strapi server stopped");
 
-        const strapiServer = await strapi.strapi();
         console.log("strapi server restarted!");
-        return strapiServer;
+        await strapi.strapi();
       } catch (err) {
         console.error(err);
       }
