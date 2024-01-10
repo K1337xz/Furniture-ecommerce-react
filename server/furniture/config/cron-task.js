@@ -1,6 +1,7 @@
 module.exports = {
   productsCount: {
     task: async ({ strapi }) => {
+      console.log("huh");
       try {
         /*      await strapi.stop();
         console.log("strapi server stopped");
