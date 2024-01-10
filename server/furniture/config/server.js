@@ -1,11 +1,11 @@
-const cronTasks = require("./cron-task");
+const productsCount = require("./cron-task");
 
 module.exports = ({ env }) => ({
   host: env("HOST", "0.0.0.0"),
   port: env.int("PORT", 1337),
   cron: {
     enabled: true,
-    tasks: cronTasks,
+    tasks: productsCount,
   },
   app: {
     keys: env.array("APP_KEYS"),
