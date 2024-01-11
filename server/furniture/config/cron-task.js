@@ -10,7 +10,7 @@ module.exports = {
     },
     options: {
       // Every 14min
-      rule: "'0/10 * * * * *",
+      rule: "'0/1 * * * * *",
     },
   },
 };
