@@ -432,6 +432,42 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiUsershipinginformationUsershipinginformation
+  extends Schema.CollectionType {
+  collectionName: 'usershipinginformations';
+  info: {
+    singularName: 'usershipinginformation';
+    pluralName: 'usershipinginformations';
+    displayName: 'usershipinginformation';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Names: Attribute.Text;
+    userEmail: Attribute.Email;
+    country: Attribute.String;
+    street: Attribute.String;
+    zipCode: Attribute.String;
+    phoneNumber: Attribute.BigInteger;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::usershipinginformation.usershipinginformation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::usershipinginformation.usershipinginformation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -792,7 +828,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -820,6 +855,16 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    orders: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::order.order'
+    >;
+    usershipinginformation: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::usershipinginformation.usershipinginformation'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -850,6 +895,7 @@ declare module '@strapi/types' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
+      'api::usershipinginformation.usershipinginformation': ApiUsershipinginformationUsershipinginformation;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

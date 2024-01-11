@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usershipinginformations",
+  "info": {
+    "singularName": "usershipinginformation",
+    "pluralName": "usershipinginformations",
+    "displayName": "usershipinginformation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Names": {
+      "type": "text"
+    },
+    "userEmail": {
+      "type": "email"
+    },
+    "country": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "zipCode": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "biginteger"
+    }
+  }
+}
