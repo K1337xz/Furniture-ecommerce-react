@@ -2,15 +2,15 @@ module.exports = {
   productsCount: {
     task: async ({ strapi }) => {
       try {
-        console.log("work after 14min" + new Date());
-        console.log("hwj");
+        await strapi.stop();
+        await strapi.start();
       } catch (err) {
         console.error(err);
       }
     },
     options: {
       // Every 11min
-      rule: "*/14 * * * *",
+      rule: "*/10 * * * *",
     },
   },
 };
