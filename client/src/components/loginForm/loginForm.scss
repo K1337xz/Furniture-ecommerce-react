@@ -1,0 +1,91 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
+.loginForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.625rem;
+	width: 70%;
+	&__inputWrapp {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 70%;
+		height: 10vh;
+		label {
+			display: flex;
+			flex-direction: column;
+			gap: 0.625rem;
+			width: 100%;
+			height: 100%;
+		}
+		input {
+			height: 55%;
+			padding-left: 1rem;
+			&:focus {
+				outline: none;
+				border: 3px solid $color400;
+				border-radius: 10px;
+			}
+		}
+	}
+	&__error {
+		position: absolute;
+		right: 0;
+		top: 100%;
+		color: #e62a2a;
+		font-size: 0.7rem;
+	}
+	&__errorInp {
+		border: 3px solid #e62a2a;
+		border-radius: 10px;
+	}
+	&__sendBtn {
+		color: $color400;
+		font-weight: 700;
+		height: 5vh;
+		width: 25%;
+	}
+	&__errorInp {
+		border: 1px solid #e62a2a;
+	}
+	&__sendWrapper {
+		width: 70%;
+	}
+}
+
+@include media("<=phone") {
+	.contactForm {
+		width: 100%;
+		&__inputWrapp {
+			width: 75%;
+		}
+		&__inputTextArea {
+			width: 75%;
+		}
+	}
+}
+@include media(">=phone", "<=tablet") {
+	.contactForm {
+		width: 100%;
+		&__inputWrapp {
+			width: 75%;
+		}
+		&__inputTextArea {
+			width: 75%;
+		}
+	}
+}
+@include media(">=tablet", "<=1024px") {
+	.contactForm {
+		width: 100%;
+		&__inputWrapp {
+			width: 80%;
+		}
+		&__inputTextArea {
+			width: 80%;
+		}
+	}
+}

@@ -9,6 +9,7 @@ import ClickedProduct from "./pages/clickedproductpage/ClickedProduct.jsx";
 import CartPage from "./pages/cartpage/CartPage.jsx";
 import OrderPage from "./pages/ordersuccespage/OrderPage.jsx";
 import store from "./redux/store.jsx";
+import Signpage from "./pages/signpage/Signpage.jsx";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
 	{
 		path: "/checkout",
 		element: <OrderPage />,
+	},
+	{
+		path: "/login",
+		element: <Signpage />,
 	},
 ]);
 
