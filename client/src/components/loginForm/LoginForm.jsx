@@ -16,7 +16,7 @@ const schema = yup.object({
 		.matches(/[a-zA-Z]/, "Password can only contain Latin letters."),
 });
 
-export default function LoginForm({ reg }) {
+export default function LoginForm({ reg, submit }) {
 	const {
 		register,
 		formState: { errors },
@@ -25,7 +25,7 @@ export default function LoginForm({ reg }) {
 		resolver: yupResolver(schema),
 	});
 	return (
-		<form className="loginForm">
+		<form className="loginForm" onSubmit={handleSubmit(submit)}>
 			<div className="loginForm__inputWrapp">
 				<label>
 					Email
@@ -44,12 +44,13 @@ export default function LoginForm({ reg }) {
 				<label>
 					Password
 					<input
-						{...register("names")}
-						className={errors.names ? "loginForm__errorInp" : ""}
+						{...register("password")}
+						type="password"
+						className={errors.password ? "loginForm__errorInp" : ""}
 					/>
-					{errors.names && (
+					{errors.password && (
 						<span className="loginForm__error">
-							{errors.names.message}
+							{errors.password.message}
 						</span>
 					)}
 				</label>
@@ -57,15 +58,15 @@ export default function LoginForm({ reg }) {
 			<div className="loginForm__sendWrapper">
 				<input
 					type="submit"
-					value="Send"
+					value="Sign In"
 					className="loginForm__sendBtn"
 				/>
 			</div>
 			<div className="loginForm__noAcc">
 				<p>
-					Don’t have an account?{" "}
-					<Link to="#" onClick={register}>
-						Sign in
+					Don’t have an account? &nbsp;
+					<Link to="#" onClick={reg}>
+						Sign Up
 					</Link>
 				</p>
 			</div>
