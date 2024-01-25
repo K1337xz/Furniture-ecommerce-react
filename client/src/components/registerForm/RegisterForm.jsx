@@ -2,11 +2,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { ref } from "yup";
+
 import "./registerForm.scss";
 import { Link } from "react-router-dom";
 
 const schema = yup.object({
 	firstName: yup.string().required("First name is required!"),
+	lastName: yup.string().required("Last name is required!"),
 	email: yup
 		.string()
 		.email("Email format is valid!")

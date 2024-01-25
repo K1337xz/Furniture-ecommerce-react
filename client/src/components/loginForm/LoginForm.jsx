@@ -5,10 +5,7 @@ import "./loginForm.scss";
 import { Link } from "react-router-dom";
 
 const schema = yup.object({
-	email: yup
-		.string()
-		.email("Email format is valid!")
-		.required("Email is required!"),
+	username: yup.string().required("Username is required!"),
 	password: yup
 		.string()
 		.required("No password provided.")
@@ -30,12 +27,12 @@ export default function LoginForm({ reg, submit }) {
 				<label>
 					Email
 					<input
-						{...register("email")}
-						className={errors.email ? "loginForm__errorInp" : ""}
+						{...register("username")}
+						className={errors.username ? "loginForm__errorInp" : ""}
 					/>
 					{errors.email && (
 						<span className="loginForm__error">
-							{errors.email.message}
+							{errors.username.message}
 						</span>
 					)}
 				</label>

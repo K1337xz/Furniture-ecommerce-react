@@ -4,9 +4,15 @@ import lastphoto from "../../assets/lastphoto.jpg";
 import { multiStepCart } from "../../hooks/multiStepCart";
 import LoginForm from "../../components/loginForm/LoginForm";
 import RegisterForm from "../../components/registerForm/RegisterForm";
+import { useSelector, useDispatch } from "react-redux";
 import "./signpage.scss";
+import { loginUser } from "../../redux/userSlice";
 
 export default function Signpage() {
+	const dispatch = useDispatch();
+
+	const { loading, error } = useSelector((state) => state.user);
+
 	const toggleChange = (e) => {
 		e.preventDefault();
 		next();
@@ -17,7 +23,15 @@ export default function Signpage() {
 	};
 
 	const toggleLogin = (data) => {
-		console.log(data);
+		let userCredentials = {
+			identifier: data.username,
+			password: data.password,
+		};
+		dispatch(loginUser(userCredentials)).then((result) => {
+			if (result.payload) {
+				console.log("work?!");
+			}
+		});
 	};
 	const toggleRegister = (data) => {
 		console.log(data);
