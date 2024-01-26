@@ -20,6 +20,9 @@
     },
     "stripeSessionId": {
       "type": "string"
+    },
+    "orderStatus": {
+      "type": "string"
     }
   }
 }

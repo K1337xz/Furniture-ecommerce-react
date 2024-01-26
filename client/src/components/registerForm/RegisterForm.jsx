@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const schema = yup.object({
 	firstName: yup.string().required("First name is required!"),
 	lastName: yup.string().required("Last name is required!"),
+	username: yup.string().required("Username is required!"),
 	email: yup
 		.string()
 		.email("Email format is valid!")
@@ -68,6 +69,22 @@ export default function RegisterForm({ log, submit }) {
 			</div>
 			<div className="registerForm__inputWrapp">
 				<label>
+					Username
+					<input
+						{...register("username")}
+						className={
+							errors.username ? "registerForm__errorInp" : ""
+						}
+					/>
+					{errors.lastName && (
+						<span className="registerForm__error">
+							{errors.lastName.message}
+						</span>
+					)}
+				</label>
+			</div>
+			<div className="registerForm__inputWrapp">
+				<label>
 					Email
 					<input
 						{...register("email")}
@@ -90,9 +107,9 @@ export default function RegisterForm({ log, submit }) {
 							errors.password ? "registerForm__errorInp" : ""
 						}
 					/>
-					{errors.password && (
+					{errors.username && (
 						<span className="registerForm__error">
-							{errors.password.message}
+							{errors.username.message}
 						</span>
 					)}
 				</label>
