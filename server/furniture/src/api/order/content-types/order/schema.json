@@ -23,6 +23,11 @@
     },
     "orderStatus": {
       "type": "string"
+    },
+    "userOrder": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
     }
   }
 }

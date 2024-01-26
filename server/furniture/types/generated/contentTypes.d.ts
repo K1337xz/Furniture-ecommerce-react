@@ -377,6 +377,12 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     products: Attribute.JSON;
     userName: Attribute.String;
     stripeSessionId: Attribute.String;
+    orderStatus: Attribute.String;
+    userOrder: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
