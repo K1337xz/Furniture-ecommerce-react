@@ -381,7 +381,7 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     userOrder: Attribute.Relation<
       'api::order.order',
       'oneToOne',
-      'admin::user'
+      'plugin::users-permissions.user'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
