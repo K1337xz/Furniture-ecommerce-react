@@ -34,6 +34,7 @@ export default function Signpage() {
 		});
 	};
 	const toggleRegister = (data) => {
+		console.log(data);
 		let userRegCredentials = {};
 	};
 

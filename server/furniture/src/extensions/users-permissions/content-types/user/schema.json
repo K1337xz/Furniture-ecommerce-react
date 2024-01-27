@@ -74,6 +74,14 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::usershipinginformation.usershipinginformation"
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
     }
   }
 }

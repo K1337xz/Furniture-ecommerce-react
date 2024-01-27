@@ -11,7 +11,7 @@ module.exports = {
     },
     options: {
       // Every 11min
-      rule: "*/1 * * * *",
+      rule: "*/10 * * * *",
     },
   },
 };
