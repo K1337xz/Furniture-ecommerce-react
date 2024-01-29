@@ -6,7 +6,6 @@ import CartContentPage from "../../components/cartContentPage/CartContentPage";
 import CheckoutForm from "../../components/chcekoutForm/CheckoutForm";
 import { useSelector, useDispatch } from "react-redux";
 import { calculateTotal } from "../../redux/cartSlice";
-import { clearCart } from "../../redux/cartSlice";
 import { loadStripe } from "@stripe/stripe-js";
 import { multiStepCart } from "../../hooks/multiStepCart";
 import axios from "axios";
@@ -24,7 +23,6 @@ export default function CartPage() {
 
 	const submitCheckout = (data) => {
 		makePayment(data);
-		dispatch(clearCart());
 	};
 	const { steps, step, currentStepIndex, next } = multiStepCart([
 		<CartContentPage />,

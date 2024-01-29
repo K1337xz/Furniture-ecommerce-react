@@ -1,10 +1,16 @@
+import { useEffect } from "react";
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import { IoBagCheckOutline } from "react-icons/io5";
 import "./OrderPage.scss";
 import { Link } from "react-router-dom";
+import { clearCart } from "../../redux/cartSlice";
 
 export default function OrderPage() {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(clearCart());
+	}, []);
 	return (
 		<>
 			<Nav />
