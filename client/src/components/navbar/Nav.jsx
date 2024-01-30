@@ -51,7 +51,11 @@ export default function Nav() {
 						</div>
 						<div className="nav__right">
 							<FiSearch className="nav__right--icons" />
-							<FiUser className="nav__right--icons" />
+							<Link to="/profile">
+								{" "}
+								<FiUser className="nav__right--icons" />
+							</Link>
+
 							<Link to={"/cart"}>
 								<div className="nav__cart">
 									{cartItems.length > 0 && (
@@ -67,10 +71,20 @@ export default function Nav() {
 				<div className={showSubNav ? "subnav active" : "subnav hidden"}>
 					<ul className="subnav__items">
 						<li>
-							<Link to="/products/desks">desks</Link>
+							<Link
+								to="/products/desks"
+								preventScrollReset={true}
+							>
+								desks
+							</Link>
 						</li>
 						<li>
-							<Link to="/products/tables">tables</Link>
+							<Link
+								to="/products/tables"
+								preventScrollReset={true}
+							>
+								tables
+							</Link>
 						</li>
 						<li>
 							<Link to="/products/chairs">CHAIRS, SOFAS</Link>

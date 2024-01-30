@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate, useLocation } from "react-router-dom";
 import { loginUser } from "../../redux/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
@@ -13,7 +14,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function Signpage() {
 	const dispatch = useDispatch();
-
+	const navigate = useNavigate();
+	const location = useLocation();
+	const total = useSelector((state) => state.cart.total);
 	const { loading, error } = useSelector((state) => state.user);
 
 	const toggleChange = (e) => {
@@ -32,7 +35,7 @@ export default function Signpage() {
 		};
 		dispatch(loginUser(userCredentials)).then((result) => {
 			if (result.payload) {
-				console.log("work?!");
+				navigate(`${location.state.prevUrl}`);
 			}
 		});
 	};
@@ -98,6 +101,7 @@ export default function Signpage() {
 							pauseOnHover
 							theme="light"
 						/>
+
 						<div className="signWrapper__left"></div>
 						<div className="signWrapper__right">{step}</div>
 					</div>

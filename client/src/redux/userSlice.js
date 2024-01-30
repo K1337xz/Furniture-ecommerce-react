@@ -9,7 +9,6 @@ export const loginUser = createAsyncThunk(
 			userCredentials
 		);
 		const res = await request.data.user;
-
 		localStorage.setItem("user", JSON.stringify(res));
 		return res;
 	}
@@ -40,13 +39,12 @@ const userSlice = createSlice({
 				console.log(action.error.message);
 				if (
 					action.error.message ===
-					"Request failed with status code 401"
+					"Request failed with status code 400"
 				) {
 					state.error = "Access Denied! invalid credentials!";
 				} else {
 					state.error = action.error.message;
 				}
-				state.error = null;
 			});
 	},
 });

@@ -1,10 +1,12 @@
 import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import Cart from "../../components/cart/Cart";
 import CartContentPage from "../../components/cartContentPage/CartContentPage";
 import CheckoutForm from "../../components/chcekoutForm/CheckoutForm";
-import { useSelector, useDispatch } from "react-redux";
+
 import { calculateTotal } from "../../redux/cartSlice";
 import { loadStripe } from "@stripe/stripe-js";
 import { multiStepCart } from "../../hooks/multiStepCart";

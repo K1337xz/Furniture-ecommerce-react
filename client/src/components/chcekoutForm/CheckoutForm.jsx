@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -30,7 +30,8 @@ const schema = yup.object({
 });
 
 export default function CheckoutForm({ submit }) {
-	const cartItem = useSelector((state) => state.cart.cart);
+	const navigate = useNavigate();
+	const user = useSelector((state) => state.user.user);
 	const [countries, setCountries] = useState([]);
 	const [checkOutData, setCheckOutData] = useState([]);
 	const {
@@ -62,12 +63,16 @@ export default function CheckoutForm({ submit }) {
 	return (
 		<>
 			<form className="checkoutForm" onSubmit={handleSubmit(submit)}>
-				<div className="checkoutForm__acc">
-					<p>
-						If you already have an account.
-						<Link to="/login"> Click to log in</Link>
-					</p>
-				</div>
+				{!user && (
+					<div className="checkoutForm__acc">
+						<p>
+							If you already have an account.
+							<Link to="/login" state={{ prevUrl: "/cart" }}>
+								Click to log in
+							</Link>
+						</p>
+					</div>
+				)}
 				<div className="checkoutForm__inputWrapp">
 					<label>
 						<div className="checkoutForm__top">
