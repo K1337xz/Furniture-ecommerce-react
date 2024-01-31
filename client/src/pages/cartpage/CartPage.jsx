@@ -18,6 +18,7 @@ const stripePromise = loadStripe(
 );
 
 export default function CartPage() {
+	const user = useSelector((state) => state.user.user);
 	const cartItems = useSelector((state) => state.cart.cart);
 	const total = useSelector((state) => state.cart.total);
 	const amount = useSelector((state) => state.cart.amount);
