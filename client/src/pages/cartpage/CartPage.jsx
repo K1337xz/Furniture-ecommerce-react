@@ -51,7 +51,7 @@ export default function CartPage() {
 			console.log(data);
 			/* 
 			await stripe.redirectToCheckout({
-				soessionId: data.data.id,
+				sessionId: data.data.id,
 			}); */
 		} catch (error) {
 			console.log(error);
