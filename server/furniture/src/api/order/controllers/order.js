@@ -6,7 +6,6 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
     const { products, userName, email } = ctx.request.body;
-    const { id } = ctx.params;
     try {
       const lineItems = await Promise.all(
         products.map(async (product) => {
@@ -36,11 +35,11 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           "https://furniture-ecommerce-react-gray.vercel.app/checkout/?success=false",
         line_items: lineItems,
       });
-      await strapi
+      const createdOrder = await strapi
         .service("api::order.order")
         .create({ data: { userName, products, stripeSessionId: session.id } });
 
-      return { id: id };
+      return { createdOrder };
     } catch (error) {
       ctx.response.status = 500;
       return { error };
