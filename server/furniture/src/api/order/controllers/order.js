@@ -6,6 +6,7 @@ const { createCoreController } = require("@strapi/strapi").factories;
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
     const { products, userName, email } = ctx.request.body;
+    const { id } = ctx.params;
     try {
       const lineItems = await Promise.all(
         products.map(async (product) => {
@@ -39,7 +40,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
         .service("api::order.order")
         .create({ data: { userName, products, stripeSessionId: session.id } });
 
-      return { id: session.id };
+      return { id: "wow", seondId: id };
     } catch (error) {
       ctx.response.status = 500;
       return { error };

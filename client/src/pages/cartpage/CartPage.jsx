@@ -48,11 +48,11 @@ export default function CartPage() {
 				"https://api-furniture-e5qc.onrender.com/api/orders",
 				reqBody
 			);
-
+			console.log(data);
+			/* 
 			await stripe.redirectToCheckout({
-				sessionId: data.data.id,
-			});
-			console.log(session);
+				soessionId: data.data.id,
+			}); */
 		} catch (error) {
 			console.log(error);
 		}

@@ -5,6 +5,7 @@ import { IoBagCheckOutline } from "react-icons/io5";
 import "./OrderPage.scss";
 import { Link } from "react-router-dom";
 import { clearCart } from "../../redux/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function OrderPage() {
 	const dispatch = useDispatch();

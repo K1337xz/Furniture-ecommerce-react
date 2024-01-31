@@ -52,7 +52,6 @@ export default function Nav() {
 						<div className="nav__right">
 							<FiSearch className="nav__right--icons" />
 							<Link to="/profile">
-								{" "}
 								<FiUser className="nav__right--icons" />
 							</Link>
 
