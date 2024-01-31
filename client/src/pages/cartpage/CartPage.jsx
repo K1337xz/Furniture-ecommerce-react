@@ -64,10 +64,10 @@ export default function CartPage() {
 					}
 				);
 			}
-			/* 
+
 			await stripe.redirectToCheckout({
 				sessionId: data.data.createdOrder.stripeSessionId,
-			}); */
+			});
 		} catch (error) {
 			console.log(error);
 		}
