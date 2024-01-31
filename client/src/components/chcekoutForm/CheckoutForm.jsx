@@ -58,6 +58,7 @@ export default function CheckoutForm({ submit }) {
 			}
 		};
 		fetchData();
+		console.log(user);
 	}, []);
 
 	return (
@@ -80,7 +81,9 @@ export default function CheckoutForm({ submit }) {
 							<span>*</span>
 						</div>
 						<input
-							{...register("names")}
+							{...register("names", {
+								value: `${user?.firstName} ${user?.lastName}`,
+							})}
 							className={
 								errors.names ? "checkoutForm__errorInp" : ""
 							}
@@ -99,7 +102,9 @@ export default function CheckoutForm({ submit }) {
 							<span>*</span>
 						</div>
 						<input
-							{...register("email")}
+							{...register("email", {
+								value: `${user?.email}`,
+							})}
 							className={
 								errors.email ? "checkoutForm__errorInp" : ""
 							}

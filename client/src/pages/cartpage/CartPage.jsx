@@ -49,10 +49,24 @@ export default function CartPage() {
 				"https://api-furniture-e5qc.onrender.com/api/orders",
 				reqBody
 			);
-			console.log(data);
+
+			if (user) {
+				const userFromDB = await axios.get(
+					`https://api-furniture-e5qc.onrender.com/api/users/${user.id}?populate=*`
+				);
+
+				const updateData = await axios.put(
+					`https://api-furniture-e5qc.onrender.com/api/users/${user.id}?populate=*`,
+					{
+						orders: {
+							connect: [data.data.createdOrder.id],
+						},
+					}
+				);
+			}
 			/* 
 			await stripe.redirectToCheckout({
-				sessionId: data.data.id,
+				sessionId: data.data.createdOrder.stripeSessionId,
 			}); */
 		} catch (error) {
 			console.log(error);
