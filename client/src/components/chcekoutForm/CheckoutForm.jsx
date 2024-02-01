@@ -31,7 +31,10 @@ const schema = yup.object({
 
 export default function CheckoutForm({ submit }) {
 	const navigate = useNavigate();
-	const user = useSelector((state) => state.user.user);
+	const user =
+		useSelector((state) => state.user.user) ||
+		JSON.parse(localStorage.getItem("user"));
+	console.log(user);
 	const [countries, setCountries] = useState([]);
 	const [checkOutData, setCheckOutData] = useState([]);
 	const {
@@ -82,7 +85,11 @@ export default function CheckoutForm({ submit }) {
 						</div>
 						<input
 							{...register("names", {
-								value: `${user?.firstName} ${user?.lastName}`,
+								value: `${
+									user
+										? `${user.firstName} ${user.lastName} `
+										: ""
+								}`,
 							})}
 							className={
 								errors.names ? "checkoutForm__errorInp" : ""
@@ -103,7 +110,7 @@ export default function CheckoutForm({ submit }) {
 						</div>
 						<input
 							{...register("email", {
-								value: `${user?.email}`,
+								value: `${user ? user.email : ""}`,
 							})}
 							className={
 								errors.email ? "checkoutForm__errorInp" : ""

@@ -10,6 +10,7 @@ import CartPage from "./pages/cartpage/CartPage.jsx";
 import OrderPage from "./pages/ordersuccespage/OrderPage.jsx";
 import store from "./redux/store.jsx";
 import Signpage from "./pages/signpage/Signpage.jsx";
+import Profile from "./pages/profilepage/Profile.jsx";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
 	{
 		path: "/login",
 		element: <Signpage />,
+	},
+	{
+		path: "/profile",
+		element: <Profile />,
 	},
 ]);
 
