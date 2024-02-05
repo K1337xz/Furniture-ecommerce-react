@@ -1,6 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const usr =
+	localStorage.getItem("user") !== null
+		? JSON.parse(localStorage.getItem("user"))
+		: [];
+
 export const loginUser = createAsyncThunk(
 	"user/loginUser",
 	async (userCredentials) => {
@@ -18,7 +23,7 @@ const userSlice = createSlice({
 	name: "user",
 	initialState: {
 		loading: false,
-		user: null,
+		user: usr,
 		error: null,
 	},
 	extraReducers: (builder) => {

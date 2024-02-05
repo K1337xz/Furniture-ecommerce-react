@@ -34,7 +34,7 @@ export default function CheckoutForm({ submit }) {
 	const user =
 		useSelector((state) => state.user.user) ||
 		JSON.parse(localStorage.getItem("user"));
-	console.log(user);
+
 	const [countries, setCountries] = useState([]);
 	const [checkOutData, setCheckOutData] = useState([]);
 	const {

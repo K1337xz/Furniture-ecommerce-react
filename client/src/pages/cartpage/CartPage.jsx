@@ -6,7 +6,6 @@ import Footer from "../../components/footer/Footer";
 import Cart from "../../components/cart/Cart";
 import CartContentPage from "../../components/cartContentPage/CartContentPage";
 import CheckoutForm from "../../components/chcekoutForm/CheckoutForm";
-
 import { calculateTotal } from "../../redux/cartSlice";
 import { loadStripe } from "@stripe/stripe-js";
 import { multiStepCart } from "../../hooks/multiStepCart";
