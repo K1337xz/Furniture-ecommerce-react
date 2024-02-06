@@ -7,7 +7,7 @@ import "./profile.scss";
 
 export default function Profile() {
 	const user = useSelector((state) => state.user.user);
-	const { steps, step, currentStepIndex, next } = multiStepCart([
+	const { steps, step, currentStepIndex, next, back } = multiStepCart([
 		<div>1</div>,
 		<div>2</div>,
 	]);
@@ -30,6 +30,9 @@ export default function Profile() {
 											? "profile__item--active"
 											: "profile__item"
 									}
+									onClick={() => {
+										back();
+									}}
 								>
 									Orders
 								</li>
@@ -39,12 +42,16 @@ export default function Profile() {
 											? "profile__item--active"
 											: "profile__item"
 									}
+									onClick={() => {
+										next();
+									}}
 								>
 									Settings
 								</li>
 							</ul>
 						</div>
 					</div>
+					<div className="profile__content">{step}</div>
 				</div>
 			</main>
 			<Footer />
