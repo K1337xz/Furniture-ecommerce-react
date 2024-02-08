@@ -2,13 +2,14 @@ import Nav from "../../components/navbar/Nav";
 import Footer from "../../components/footer/Footer";
 import { multiStepCart } from "../../hooks/multiStepCart";
 import { useSelector, useDispatch } from "react-redux";
+import Orders from "../../components/orders/Orders";
 import avatar from "../../assets/blank-profile-picture-973460_1280.webp";
 import "./profile.scss";
 
 export default function Profile() {
 	const user = useSelector((state) => state.user.user);
 	const { steps, step, currentStepIndex, next, back } = multiStepCart([
-		<div>1</div>,
+		<Orders />,
 		<div>2</div>,
 	]);
 	console.log(currentStepIndex);

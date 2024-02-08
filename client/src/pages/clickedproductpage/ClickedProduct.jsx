@@ -66,6 +66,7 @@ export default function ClickedProduct() {
 		}
 	};
 
+	console.log(params);
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -220,6 +221,7 @@ export default function ClickedProduct() {
 											dispatch(
 												addToCart({
 													id: params.id,
+													category: params.category,
 													title: clickedData
 														?.attributes?.Name,
 													price: clickedData

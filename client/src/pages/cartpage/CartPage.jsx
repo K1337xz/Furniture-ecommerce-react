@@ -36,11 +36,12 @@ export default function CartPage() {
 		const reqBody = {
 			userName: values.names,
 			email: values.email,
-			products: cartItems.map(({ id, amount, price, title }) => ({
+			products: cartItems.map(({ id, amount, price, title, img }) => ({
 				id,
 				amount,
 				price,
 				title,
+				img,
 			})),
 		};
 		try {
