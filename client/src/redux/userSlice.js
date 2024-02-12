@@ -4,7 +4,7 @@ import axios from "axios";
 const usr =
 	localStorage.getItem("user") !== null
 		? JSON.parse(localStorage.getItem("user"))
-		: [];
+		: null;
 
 export const loginUser = createAsyncThunk(
 	"user/loginUser",

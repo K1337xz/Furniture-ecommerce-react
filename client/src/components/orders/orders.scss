@@ -1,0 +1,26 @@
+@use "../../scss/abstract/colors" as *;
+@use "../../scss/base/brakepoints" as *;
+
+.order {
+	width: 65%;
+	height: 45%;
+	&__table {
+		width: 100%;
+		thead {
+			height: 10vh;
+		}
+		th {
+			text-align: left;
+			padding: 15px 10px;
+			border-bottom: 1px solid #0b152865;
+		}
+		td {
+			text-align: left;
+			padding: 15px 10px;
+			border-bottom: 1px solid #0b152865;
+		}
+	}
+	.tableMobile {
+		display: none;
+	}
+}

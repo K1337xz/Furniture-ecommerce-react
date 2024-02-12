@@ -29,11 +29,9 @@ const schema = yup.object({
 		.matches(/^[0-9.-]*$/, "Invalid zipcode format"),
 });
 
-export default function CheckoutForm({ submit }) {
+export default function CheckoutForm({ submit, loading }) {
 	const navigate = useNavigate();
-	const user =
-		useSelector((state) => state.user.user) ||
-		JSON.parse(localStorage.getItem("user"));
+	const user = useSelector((state) => state.user.user);
 
 	const [countries, setCountries] = useState([]);
 	const [checkOutData, setCheckOutData] = useState([]);
@@ -61,7 +59,6 @@ export default function CheckoutForm({ submit }) {
 			}
 		};
 		fetchData();
-		console.log(user);
 	}, []);
 
 	return (
@@ -211,9 +208,10 @@ export default function CheckoutForm({ submit }) {
 				<div className="checkoutForm__sendWrapper">
 					<input
 						type="submit"
-						value="Checkout"
+						value={loading ? "" : "Checkout"}
 						className="checkoutForm__sendBtn"
 					/>
+					{loading && <span className="loader"></span>}
 				</div>
 			</form>
 		</>

@@ -1,4 +1,7 @@
 "use strict";
+
+const order = require("../services/order");
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const { createCoreController } = require("@strapi/strapi").factories;
@@ -35,9 +38,14 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           "https://furniture-ecommerce-react-gray.vercel.app/checkout/?success=false",
         line_items: lineItems,
       });
-      const createdOrder = await strapi
-        .service("api::order.order")
-        .create({ data: { userName, products, stripeSessionId: session.id } });
+      const createdOrder = await strapi.service("api::order.order").create({
+        data: {
+          userName,
+          products,
+          stripeSessionId: session.id,
+          orderStatus: "Awaiting Fulfillment",
+        },
+      });
 
       return { createdOrder };
     } catch (error) {

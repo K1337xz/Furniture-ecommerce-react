@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Nav from "../../components/navbar/Nav";
@@ -21,14 +21,16 @@ export default function CartPage() {
 	const cartItems = useSelector((state) => state.cart.cart);
 	const total = useSelector((state) => state.cart.total);
 	const amount = useSelector((state) => state.cart.amount);
+	const [loading, setLoading] = useState(false);
 	const dispatch = useDispatch();
 
 	const submitCheckout = (data) => {
+		setLoading(true);
 		makePayment(data);
 	};
 	const { steps, step, currentStepIndex, next } = multiStepCart([
 		<CartContentPage />,
-		<CheckoutForm submit={submitCheckout} />,
+		<CheckoutForm submit={submitCheckout} loading={loading} />,
 	]);
 
 	async function makePayment(values) {
