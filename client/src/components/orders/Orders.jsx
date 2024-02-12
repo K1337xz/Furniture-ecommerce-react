@@ -40,6 +40,9 @@ export default function Orders() {
 				<td className="cartItem__price">
 					<p>{itm.updatedAt.slice(0, 10)}</p>
 				</td>
+				<td>
+					<p>{itm.orderStatus}</p>
+				</td>
 			</tr>
 		);
 	});
