@@ -38,6 +38,7 @@ export default function CartPage() {
 		const reqBody = {
 			userName: values.names,
 			email: values.email,
+			total: total,
 			products: cartItems.map(({ id, amount, price, title, img }) => ({
 				id,
 				amount,

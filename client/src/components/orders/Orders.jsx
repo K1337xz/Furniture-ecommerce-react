@@ -6,7 +6,7 @@ import "./orders.scss";
 export default function Orders() {
 	const user = useSelector((state) => state.user.user);
 	const [userOrders, setUserOrders] = useState([]);
-	console.log(user);
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -16,6 +16,7 @@ export default function Orders() {
 					}?populate=*`
 				);
 				setUserOrders(data.data.orders);
+				console.log(userOrders);
 			} catch (error) {
 				console.log(error);
 			}
@@ -35,7 +36,7 @@ export default function Orders() {
 					{itm.id}
 				</td>
 				<td className="cartItem__price">
-					<p>$</p>
+					<p>{`${itm.total}`}</p>
 				</td>
 				<td className="cartItem__price">
 					<p>{itm.updatedAt.slice(0, 10)}</p>
@@ -50,8 +51,8 @@ export default function Orders() {
 	console.log(userOrders);
 	return (
 		<div className="order">
-			{!userOrders ? (
-				<p>The user has no orders</p>
+			{userOrders.length === 0 ? (
+				<p>User has no orders</p>
 			) : (
 				<>
 					<table cellSpacing="0" className="order__table">

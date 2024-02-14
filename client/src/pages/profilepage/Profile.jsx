@@ -12,7 +12,6 @@ export default function Profile() {
 		<Orders />,
 		<div>2</div>,
 	]);
-	console.log(currentStepIndex);
 	return (
 		<>
 			<Nav />

@@ -8,7 +8,7 @@ const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
-    const { products, userName, email } = ctx.request.body;
+    const { products, userName, email, total } = ctx.request.body;
     try {
       const lineItems = await Promise.all(
         products.map(async (product) => {
@@ -44,6 +44,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
           products,
           stripeSessionId: session.id,
           orderStatus: "Awaiting Fulfillment",
+          total: total,
         },
       });
 
