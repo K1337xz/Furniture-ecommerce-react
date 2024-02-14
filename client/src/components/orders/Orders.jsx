@@ -36,7 +36,7 @@ export default function Orders() {
 					{itm.id}
 				</td>
 				<td className="cartItem__price">
-					<p>{`${itm.total}`}</p>
+					<p>{`${itm.total} $`}</p>
 				</td>
 				<td className="cartItem__price">
 					<p>{itm.updatedAt.slice(0, 10)}</p>
