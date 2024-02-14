@@ -2,6 +2,9 @@
 @use "../../scss/base/brakepoints" as *;
 
 .order {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 65%;
 	height: 45%;
 	&__table {

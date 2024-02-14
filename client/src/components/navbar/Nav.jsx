@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import logoblack from "../../assets/furniture-logos_transparent.png";
 import scrollNav from "../../hooks/scrollNav";
@@ -9,6 +9,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./nav.scss";
 
 export default function Nav() {
+	const location = useLocation();
 	const user = useSelector((state) => state.user.user);
 	const cartItems = useSelector((state) => state.cart.cart);
 	const [showNav, setShowNav] = useState(true);
@@ -28,6 +29,7 @@ export default function Nav() {
 		}
 	}, [scroll.y, scroll.lastY]);
 
+	console.log(location);
 	return (
 		<>
 			<header className={showNav ? "active" : "hidden"}>
@@ -51,7 +53,10 @@ export default function Nav() {
 						</div>
 						<div className="nav__right">
 							<FiSearch className="nav__right--icons" />
-							<Link to={user ? "/profile" : "/login"}>
+							<Link
+								to={user ? "/profile" : "/login"}
+								state={{ prevUrl: location.pathname }}
+							>
 								<FiUser className="nav__right--icons" />
 							</Link>
 

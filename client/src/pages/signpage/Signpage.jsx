@@ -33,6 +33,7 @@ export default function Signpage() {
 			identifier: data.username,
 			password: data.password,
 		};
+
 		dispatch(loginUser(userCredentials)).then((result) => {
 			if (result.payload) {
 				navigate(`${location.state.prevUrl}`);
