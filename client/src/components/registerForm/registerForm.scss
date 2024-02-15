@@ -76,6 +76,10 @@
 		&__inputTextArea {
 			width: 75%;
 		}
+		&__sendBtn {
+			background-color: $color200;
+			width: 70%;
+		}
 	}
 }
 @include media(">=tablet", "<=1024px") {
@@ -86,6 +90,10 @@
 		}
 		&__inputTextArea {
 			width: 80%;
+		}
+		&__sendBtn {
+			background-color: $color200;
+			width: 70%;
 		}
 	}
 }
