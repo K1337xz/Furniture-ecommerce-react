@@ -65,6 +65,9 @@
 		&__inputTextArea {
 			width: 75%;
 		}
+		&__sendBtn {
+			width: 70%;
+		}
 	}
 }
 @include media(">=phone", "<=tablet") {
@@ -75,6 +78,9 @@
 		}
 		&__inputTextArea {
 			width: 75%;
+		}
+		&__sendBtn {
+			width: 70%;
 		}
 	}
 }
