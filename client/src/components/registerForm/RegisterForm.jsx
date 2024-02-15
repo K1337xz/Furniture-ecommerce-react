@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { ref } from "yup";
-
 import "./registerForm.scss";
 import { Link } from "react-router-dom";
 

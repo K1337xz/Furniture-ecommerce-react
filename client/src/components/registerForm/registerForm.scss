@@ -57,7 +57,7 @@
 }
 
 @include media("<=phone") {
-	.contactForm {
+	.registerForm {
 		width: 100%;
 		&__inputWrapp {
 			width: 75%;
@@ -68,7 +68,7 @@
 	}
 }
 @include media(">=phone", "<=tablet") {
-	.contactForm {
+	.registerForm {
 		width: 100%;
 		&__inputWrapp {
 			width: 75%;
@@ -79,7 +79,7 @@
 	}
 }
 @include media(">=tablet", "<=1024px") {
-	.contactForm {
+	.registerForm {
 		width: 100%;
 		&__inputWrapp {
 			width: 80%;
