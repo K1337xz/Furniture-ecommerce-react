@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import Cart from "../../components/cart/Cart";
 import { multiStepCart } from "../../hooks/multiStepCart";
+import "./cartcontentpage.scss";
 
 export default function CartContentPage() {
 	return (
