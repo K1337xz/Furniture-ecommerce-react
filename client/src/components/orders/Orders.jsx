@@ -26,19 +26,19 @@ export default function Orders() {
 
 	const ordersCells = userOrders?.map((itm) => {
 		return (
-			<tr className="cartItem" id={itm.id}>
+			<tr className="orderItem" id={itm.id}>
 				<td
-					className="cartItem__removeItem"
+					className="orderItem__removeItem"
 					onClick={() => {
 						dispatch(removeItemFromCart(cartId));
 					}}
 				>
 					{itm.id}
 				</td>
-				<td className="cartItem__price">
+				<td className="orderItem__price">
 					<p>{`${itm.total} $`}</p>
 				</td>
-				<td className="cartItem__price">
+				<td className="orderItem__price">
 					<p>{itm.updatedAt.slice(0, 10)}</p>
 				</td>
 				<td>
@@ -48,7 +48,6 @@ export default function Orders() {
 		);
 	});
 
-	console.log(userOrders);
 	return (
 		<div className="order">
 			{userOrders.length === 0 ? (

@@ -1,17 +1,5 @@
 export const images = [
 	{
-		id: 1,
-		desc: "Tables",
-		src: "https://i.imgur.com/UDx2Yzo.jpg",
-		href: "tables",
-	},
-	{
-		id: 2,
-		desc: "Shelves and Cabinets",
-		src: "https://i.imgur.com/h3yFmba.jpg",
-		href: "shelves",
-	},
-	{
 		id: 3,
 		desc: "Desks",
 		src: "https://i.imgur.com/kJTFEkn.jpg",

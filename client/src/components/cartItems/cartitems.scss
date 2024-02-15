@@ -21,6 +21,7 @@
 }
 @include media("<=phone") {
 	.cartItem {
+		position: relative;
 		&__image {
 			width: 75px;
 			img {
@@ -36,7 +37,6 @@
 		&__removeItem {
 			position: absolute;
 			right: 20px;
-			top: -10px;
 		}
 		&__amount {
 			width: 25%;

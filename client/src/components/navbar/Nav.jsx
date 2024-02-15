@@ -29,7 +29,6 @@ export default function Nav() {
 		}
 	}, [scroll.y, scroll.lastY]);
 
-	console.log(location);
 	return (
 		<>
 			<header className={showNav ? "active" : "hidden"}>
@@ -52,7 +51,6 @@ export default function Nav() {
 							</Link>
 						</div>
 						<div className="nav__right">
-							<FiSearch className="nav__right--icons" />
 							<Link
 								to={user ? "/profile" : "/login"}
 								state={{ prevUrl: location.pathname }}

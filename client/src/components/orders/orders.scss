@@ -27,3 +27,21 @@
 		display: none;
 	}
 }
+@include media("<=phone") {
+	.order {
+		width: 100%;
+		&__table {
+			th {
+				text-align: center;
+				padding: 15px 10px;
+				border-bottom: 1px solid #0b152865;
+			}
+			td {
+				text-align: center;
+				font-size: 0.8rem;
+				padding: 15px 10px;
+				border-bottom: 1px solid #0b152865;
+			}
+		}
+	}
+}

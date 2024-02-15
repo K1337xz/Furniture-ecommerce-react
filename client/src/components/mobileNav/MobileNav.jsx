@@ -4,11 +4,13 @@ import logoblack from "../../assets/furniture-logos_transparent.png";
 import { FiMenu, FiSearch, FiUser, FiShoppingCart } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
 import "./mobileNav.scss";
 
 export default function MobileNav() {
+	const location = useLocation();
+	const user = useSelector((state) => state.user.user);
 	const cartItems = useSelector((state) => state.cart.cart);
 	const [showCategories, setShowCategories] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +33,12 @@ export default function MobileNav() {
 					</Link>
 				</div>
 				<div className="mobileNav__right">
-					<FiUser className="mobileNav__icons" />
+					<Link
+						to={user ? "/profile" : "/login"}
+						state={{ prevUrl: location.pathname }}
+					>
+						<FiUser className="nav__right--icons" />
+					</Link>
 					<Link to={"/cart"}>
 						<div className="nav__cart">
 							{cartItems.length > 0 && (

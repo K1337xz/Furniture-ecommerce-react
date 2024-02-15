@@ -192,6 +192,15 @@
 			height: 40vh;
 		}
 	}
+	.tableDesktop {
+		display: none;
+	}
+	.tableMobile {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 95%;
+	}
 }
 @include media(">=phone", "<=tablet") {
 	.cartPage {
