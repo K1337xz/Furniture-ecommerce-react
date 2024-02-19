@@ -80,6 +80,13 @@
 			background-color: $color200;
 			width: 70%;
 		}
+		&__sendWrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 70%;
+			height: 10vh;
+		}
 	}
 }
 @include media(">=tablet", "<=1024px") {
@@ -94,6 +101,14 @@
 		&__sendBtn {
 			background-color: $color200;
 			width: 70%;
+			color: #6086d2;
+		}
+		&__sendWrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 70%;
+			height: 10vh;
 		}
 	}
 }
