@@ -3,7 +3,9 @@ module.exports = {
     task: async ({ strapi }) => {
       console.log("?????");
       try {
-        const products = await strapi.query("api::product.product").findMany();
+        const products = await strapi.db
+          .query("api::product.product")
+          .findMany();
         const productsCount = products.length;
         console.log(productsCount);
       } catch (err) {
