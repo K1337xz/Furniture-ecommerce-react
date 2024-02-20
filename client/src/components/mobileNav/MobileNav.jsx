@@ -91,9 +91,6 @@ export default function MobileNav() {
 									<li>
 										<Link to="/materials">MATERIALS</Link>
 									</li>
-									<li>
-										<Link to="/contact">CONTACT US</Link>
-									</li>
 								</ul>
 							)}
 							{showCategories && (

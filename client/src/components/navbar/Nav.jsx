@@ -41,9 +41,6 @@ export default function Nav() {
 							<li>
 								<Link to="/materials">MATERIALS</Link>
 							</li>
-							<li>
-								<Link to="/contact">CONTACT US</Link>
-							</li>
 						</ul>
 						<div className="nav__middle">
 							<Link to="/">
